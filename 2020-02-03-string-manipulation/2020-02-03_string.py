@@ -1,3 +1,5 @@
+from re import findall
+
 # Ecrire une fonction hascap(s) qui renvoie tout les mots de la chaînes commençant par une majuscule. Pour ce faire utiliser la fonction ord() pour obtenir le code ASCII des lettres (Les lettres majuscule ont un code allant de 65 à 90).
 
 def hascaps(x):
@@ -53,7 +55,7 @@ def inflation(s):
 
 
 
-x = "Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro"
+# x = "Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro Je suis avec mes bro"
 
 def ligne(x):
     s1 = x.split()
@@ -66,4 +68,18 @@ def ligne(x):
             s2.append(i[-1])
     print(s2)
 
-ligne(x) 
+
+
+
+# 4. Proposer un programme qui renvoie la liste de tout les nombres (ycompris décimaux et négatifs) d’une chaîne de caractères. A tester sur la chaîne : « Les 2 maquereaux valent 6.50 euros ».
+
+def return_num(x):
+    indice =  '[-]*[0-9][\. or \,]?[0-9]*'
+    return (findall(indice,x))
+
+x = "Les 2 maquereaux valent 6.50 euros"
+print(return_num(x))
+
+
+# 5. Proposer une fonction arrondi(s) qui dans la chaîne s troncature tout les nombre décimaux. On autorise les nombres négatifs.Pour ce faire, vous avez la possibilité d’utiliser : des () pour désigner des blocs de données dans l’expression rationnelle. pour remplacer chacun des blocs l’expression est r’\1_\2_’.
+
