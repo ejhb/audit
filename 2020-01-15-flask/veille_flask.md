@@ -20,10 +20,7 @@
 **Tout au long de la veille nous allons utiliser Python 3. Vous pouvez à tout moment changer la version de l'interpreter avec la command: ```$ virtualenv -p /usr/bin/python3.6 venv```**
 
 **L'activation votre environement virtuel à chaque fois que vous serez amenez à travaillé dans votre projet (si toute fois vous décidez d'utiliser un venv)```$ source venv/bin/activate``` et ```$ deactivate```**
-
-**Une fois à l'intérieur de votre venv installé flask avec la commande: ```$ pip 3 install Flask``` nous pourrons sauvegarder dans un ficher requirements.txt pour nos future packages.** 
-
-**L'étape de l'environement virtuel n'est pas nécéssaire mais c'est une façon de faire très clean et plutôt simple à mettre en place donc autant prendre de bonne habitude de travail.**
+Lorem ipsum dolor sit amet, consect adipis elit minim veniam ettis inkeras.re en place donc autant prendre de bonne habitude de travail.**
 
 ## Script
 
@@ -36,9 +33,9 @@ def hello_world():
    return ‘Hello, World!’
 ```
 
-**Enregirstrons ce bout de script dans un fichier "name".py.** 
+**Enregirstrons ce bout de script dans un fichier "name.py".** 
 
-**Si on décide d'exécuter notre application on run le script avec python. Une fois dans le dossier ```$ python3 "name".py```**.
+**Si on décide d'exécuter notre application on run le script avec python. Une fois dans le dossier ```$ python3 "name.py"```**.
 
 **L'output suivant devrait être déclaré:**
 
