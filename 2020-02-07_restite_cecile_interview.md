@@ -1,6 +1,8 @@
 # Formation alternance 
 
-Conception d'application à Marseille qui dure ~ 13 mois, cette formation en particulier est uniquement disponible à Marseille 1 semaine en cours 3 semaines en entreprise. Cette formation certifie d'un diplome RNCP équivalent bac + 3 et débouche sur un poste de type cadre. La formation commmence vers septembre de 2020. 
+Conception d'application à Marseille qui dure ~ 13 mois, cette formation en particulier est uniquement disponible à Marseille 1 semaine en cours 3 semaines en entreprise. 
+
+Cette formation certifie d'un diplome RNCP équivalent bac + 3 et débouche sur un poste de type cadre. La formation commmence vers septembre de 2020. 
 
 Les langages abordé dépende de l'entreprise dans laquelle va se passer notre alternance les cours sont plus basé sur l'aspect concept/methode/démarche de programmation/developpement. 
 
