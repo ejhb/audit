@@ -72,4 +72,18 @@ Les projections sont les tables qu'on selectionne.
     Les tri sont très couteux en ressources, autant récupéré les données brut pour ensuite les trié. 
 > Utiliser des fonctions (formatage, conversion de type, manipulation de chaines)
 
+SQL : Agrégation des données 
+> Sommes (SUM)
+> Moyennes(AVG)
+> Minimum (MIN)
+> Maximum (MAX)
+> Concaténation (selon SGBD)
+> Une fonction d'agrégation oblige à toujours utiliser le regroupement (GROUP BY)
+> Prédicats sur le résultat d'agréation (HAVING)
+    a having et toujours précédé d'un ORDER BY
+> Anttetion aux doublons : ; Comment gérer les agréagations avec cardinalité multiple 
+
+SQL : Quelques conseil / bonne pratique
+
+
 
