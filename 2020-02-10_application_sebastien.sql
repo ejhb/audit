@@ -76,4 +76,25 @@ INNER JOIN customer c
 ON r.customer_id = c.customer_id
 GROUP BY first_name, last_name;
 
+-- L'acteur préféré de chaque client
+
+SELECT 
+,c.client_id
+,c.first_name || ' ' || c.last_name as client_name
+,a.actor_id
+,a.first_name || ' ' || a.last_name as actor_name
+,COUNT(*) nb_occurence
+FROM customer c
+INNER JOIN rental r ON r.customer_id = c.customer_id
+INNER JOIN inventory i on i.inventory_id = r.inventory_id
+INNER JOIN film f ON f.film_id = i.film_id
+INNER JOIN film_actor fa on fa.film_id - f.film_id
+INNER JOIN actor a on a.actor_id = fa.actor_id
+GROUP BY 
+c.client_id
+,c.first_name
+,c.last_name
+,a.first_name
+,a.last_name
+;
 
