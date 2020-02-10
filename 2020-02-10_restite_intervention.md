@@ -66,9 +66,10 @@ SQL : Transformer des données
 Les projections sont les tables qu'on selectionne.
 
 > Les sous-rêquetes
- 
 > Les blocs < WITH >
+    Le with permet de renomé une sous-requête. SELECT * FROM WITH SELECT * FROM plutôt qu'une UNION pour ainsi rappeler notre sous requête sans avoir à la retapé. 
 > Le tri (ORDER BY)
+    Les tri sont très couteux en ressources, autant récupéré les données brut pour ensuite les trié. 
 > Utiliser des fonctions (formatage, conversion de type, manipulation de chaines)
 
 
