@@ -85,5 +85,23 @@ SQL : Agrégation des données
 
 SQL : Quelques conseil / bonne pratique
 
+> Ecrire les requêtes en < Colonne >
+> Indenter chaque sous-requêtes
+> Utiliser dans Alias (table et colonnes)
+> WHERE 1=1 
+    Permet de commenté les conditions de WHERE 
+> La virgule d'abord
+> Le < DISTINCT >
+    Eviter le distinct, si on est obligé de sortir un distinct c'est que la requête manque d'optimisation.
+> Conditions multiples de jointures
 
+SQL : Aller plus loin avec ORACLE 
 
+> Le fenêtrage (windowing) : KEEP,DENSE_RANK,RANK,PARTITION BY, ect.
+> Optimisation et plan d'exécution 
+> Data statistics 
+> Les < Hint>
+> Le cace serveur 
+> les langages SGBD (PL/SQL)
+> Interroger des métadonnées 
+> Schedulers/Jobs
