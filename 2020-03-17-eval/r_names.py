@@ -4,20 +4,11 @@ names_elus = "code (insee)	mode de scrutin	numliste	code (nuance de la liste)	nu
 
 def r_names(s):
     s2 = s.strip().replace('.','').replace(',','').replace(' ','_').replace('(','').replace(')','').replace("'",'').replace('é','e')
+    return s2
     print(s2)
 
 r_names(names_elus)
 
-
 # 2     
 
-
-
-
-
-
-
-
-
-
-
+def parse_dates(x)
