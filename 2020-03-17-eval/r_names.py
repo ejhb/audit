@@ -25,9 +25,11 @@ def r_names(s):
 # r_names(lib_cities)
 # r_names(lib_categorie)
 # r_names(lib_population)
-r_names(lib_departements)
+# r_names(lib_departements)
 
-# 2  Ecrire une fonction python parse_dates() qui admet pour entrer la liste renvoyer par r_names() et qui retourne une liste contenant seulement les noms    de colonnes commençant par « Date».   
+# 2  Ecrire une fonction python parse_dates() qui admet pour entrer la liste renvoyer par r_names() et qui retourne une liste contenant seulement les noms    de colonnes commençant par « Date». 
+
+  
 
 
 
