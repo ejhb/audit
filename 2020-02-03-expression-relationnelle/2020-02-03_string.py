@@ -5,7 +5,7 @@ from re import findall
 def hascaps(x):
     l1= []
     l2 = x.split()
-    for i  in l2:
+    for i in l2:
         if ord(i[0]) in range(65,91):
             l1.append(i)
     return print(l1)
