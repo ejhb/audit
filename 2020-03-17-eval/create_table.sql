@@ -1,4 +1,4 @@
--- Créer une base de données « RNE »
+﻿-- Créer une base de données « RNE »
 CREATE DATABASE RNE;
 
 USE RNE;
@@ -37,7 +37,7 @@ code_insee VARCHAR(12)
 ,nom VARCHAR(1000)
 ,prenom VARCHAR(1000)
 ,sexe VARCHAR(1)
-,date_de_naissance VARCHAR(100)
+,date_de_naissance DATETIME
 ,code_profession INT(6)
 ,libelle_profession VARCHAR(1000)
 ,nationalite VARCHAR(1000)
@@ -100,8 +100,10 @@ id INT(4)
 
 -- Create RNE_user et attribution des privilèges
 CREATE USER 'RNE_user'@'localhost' IDENTIFIED BY 'RNE_password';
+
 -- Add all privileges to RNE_user
-GRANT ALL PRIVILEGES ON * . * TO 'RNE_user'@'localhost';
+GRANT ALL PRIVILEGES ON *RNE TO 'RNE_user'@'localhost';
+
 -- It reload privileges 
 FLUSH PRIVILEGES;
 
