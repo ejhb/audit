@@ -62,7 +62,7 @@ WHERE departements.name = "Bouches-du-Rhône"
 
 -- 12. Quel sont les 10 départements comptant le plus d’ouvriers.
 
-SELECT COUNT(ouvriers) as count_ouv
+SELECT SUM(ouvriers) as count_ouv
 ,d.name
 FROM categorie c 
 INNER JOIN population p
