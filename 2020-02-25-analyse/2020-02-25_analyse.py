@@ -46,7 +46,8 @@ what_data = is_tofurkey['Do you typically have gravy?']
 
 print(what_data)
 
-class Series :
-    def __init__(self, col ) 
-        self.col = col
-    
+# Créer un objet Series indiquant avec des booléens les valeurs de la colonnes « Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply .- Apple » qui sont nulles. Assigner le résultat à la variable « apple_isnull ».
+
+apple_isnull = df[df['Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply .-Apple » qui sont nulles.']].apple_isnull
+
+print(apple_isnull)
