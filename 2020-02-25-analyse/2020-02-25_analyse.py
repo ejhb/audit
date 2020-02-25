@@ -46,3 +46,7 @@ what_data = is_tofurkey['Do you typically have gravy?']
 
 print(what_data)
 
+class Series :
+    def __init__(self, col ) 
+        self.col = col
+    
