@@ -64,8 +64,9 @@ def hello_world():
 
 - Ligne 1 nous importons flask.
 - Ligne 2 ont créé une instance de class pour Flask, c'est une variable spécial qui a pour valeur string:"__ main__".
-- Ligne 4 '/' détermine un chemin, ici nous somme dans le home page où sera displayed la fonction sur la ligne qui suit. On aurait pu definir un autre chemin d'accés par example: '/login' pour y accéder http://127.0.0.1:5000/login
-- Ligne 5 on appel notre function hello_world().
+- Ligne 4 '/' détermine un chemin, ici nous somme dans le home page où sera displayed la fonction sur la ligne qui suit. On aurait pu definir un autre chemin d'accés par example: '/login' pour y accéder http://127.0.0.1:5000/login . C'est la fonction route de la librairie app. 
+- Ligne 5 on définit notre function hello_world().
 - Ligne 6 cette function retourne 'Hello, World!'.
 
 SOURCE : https://pythonhow.com/how-a-flask-app-works/ & https://dev.to/gajesh/the-complete-flask-beginner-tutorial-124i
+
