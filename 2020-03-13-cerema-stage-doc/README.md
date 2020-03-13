@@ -6,7 +6,6 @@ L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
 Responsable de la documentation : Joshua
 
-
 ## Reporting 
 
 Le reporting est un compte rendu bref et quotidien de la progression de la team.
