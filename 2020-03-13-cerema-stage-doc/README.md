@@ -25,6 +25,8 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/13 :** **REMOTE :** Mise en place d'un environement full remote avec la stack, création d'un **Trello :** https://trello.com/b/oE3T8HdO/stage-cerema, **Documentation :** "URL INPROGRESS"
 
+-----------------------
+
 ## Logs 
 
 Les logs regroupe les ajout et modification significative du dépot.
