@@ -1,6 +1,6 @@
 # Documentation med-data
 
-Dans ce repertoire vous pourrez retrouvé une documentation détaillé de la stack med-data. Elle est réalisé par les stagières de **Simplon.co** l'ors de leurs formation en deveuloppers.se Data dans le cadre de leurs stage en **deeplearning** à la **Cerema**.
+Dans ce repertoire vous pourrez retrouvé une documentation détaillé de la stack med-data. Elle est réalisé par les stagières de **Simplon.co** l'ors de leurs formation en la qualité de deveuloppers.se Data dans le cadre de leurs stage en **deeplearning** à la **Cerema**.
 
 L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
