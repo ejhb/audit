@@ -1,7 +1,0 @@
-=================
-POSTGRE
-=================
-
-.. toctree::
-   :numbered:
-   :titlesonly:

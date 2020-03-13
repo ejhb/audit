@@ -1,7 +1,0 @@
-=================
-YOLO
-=================
-
-.. toctree::
-   :numbered:
-   :titlesonly:

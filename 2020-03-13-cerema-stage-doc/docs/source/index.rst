@@ -6,39 +6,14 @@
 Bienvenue dans la documentation med-data
 ======================================================
 
-NEAT-EO
+Réseau neuronal
 ===
 
 .. toctree::
    :maxdepth: 2
 
-   neat-eo/index	      
+    reseau-neuronal/index	      
 
 
-QGIS
-=======
-
-.. toctree::
-   :maxdepth: 2
-
-   qgis/index
-
-
-POSTGRE
-=================
-
-.. toctree::
-   :maxdepth: 2
-
-   postgre/index
-
-   
-YOLO
-=================================
-
-.. toctree::
-   :maxdepth: 2
-
-   yolo/index
 
 
