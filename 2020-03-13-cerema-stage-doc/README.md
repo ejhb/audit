@@ -6,7 +6,7 @@ L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
 Responsable de la documentation : Joshua
 
------------------------------
+
 ## Reporting 
 
 Le reporting est un compte rendu bref et quotidien de la progression de la team.
@@ -24,8 +24,6 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 * **2020/03/12 :** **QGIS :** Sampling dataset, NEAT-EO : détourage, **AUDIT :** POSTGRE,POSTGIS
 
 * **2020/03/13 :** **REMOTE :** Mise en place d'un environement full remote avec la stack, création d'un **Trello :** https://trello.com/b/oE3T8HdO/stage-cerema, **Documentation :** "URL INPROGRESS"
-
------------------------
 
 ## Logs 
 
