@@ -4,7 +4,6 @@ Réseau neuronal
 
 .. toctree::
    :maxdepth: 3
-   :numbered:
    :titlesonly:
 
    neat-eo 

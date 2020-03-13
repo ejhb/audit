@@ -7,20 +7,19 @@
 Bienvenue dans la documentation med-data
 ****************************************
 
-Réseau neuronal
-===============
-
 .. toctree::
    :maxdepth: 2
+   :hidden:
+   :caption: Réseau neuronal
 
    reseau-neuronal/index	  
 
-Logiciel géospatial
-===================
 
 .. toctree::
    :maxdepth: 2
-   
+   :hidden:
+   :caption: Logiciel Géospatial
+
    geospatial/index
 
 
