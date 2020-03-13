@@ -3,18 +3,42 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to documentation_stage_cerema's documentation!
+Bienvenue dans la documentation med-data
 ======================================================
+
+NEAT-EO
+===
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+
+   neat-eo/index	      
 
 
+QGIS
+=======
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   qgis/index
+
+
+POSTGRE
+=================
+
+.. toctree::
+   :maxdepth: 2
+
+   postgre/index
+
+   
+YOLO
+=================================
+
+.. toctree::
+   :maxdepth: 2
+
+   yolo/index
+
+
