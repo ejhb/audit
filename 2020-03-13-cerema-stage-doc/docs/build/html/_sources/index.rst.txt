@@ -24,7 +24,7 @@ En modélisation des circuits biologiques, ils permettent de tester quelques hyp
   :doc:`YOLO <reseau-neuronal/yolo>`
 
 * **Reconnaissance**:
-  :doc:`Import guide <reseau-neuronal/yolt>`
+  :doc:`YOLT <reseau-neuronal/yolt>`
 
 
 .. toctree::
