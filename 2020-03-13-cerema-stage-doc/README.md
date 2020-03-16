@@ -1,4 +1,4 @@
-# Documentation med-data
+# <p align=center>Documentation med-data</p>
 
 Dans ce repertoire vous pourrez retrouver une documentation détaillé de la stack med-data. Elle est réalisé par les stagières de **Simplon.co** l'ors de leurs formation en la qualité de deveuloppers.se Data dans le cadre de leurs stage en **deeplearning** à la **Cerema**.
 
@@ -6,7 +6,11 @@ L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
 Responsable de la documentation : Joshua
 
-## Reporting 
+[Lien vers la documentation ](https://documentation-med-data.readthedocs.io/en/latest/)
+
+
+## <p align=center>Reporting</p>
+
 
 Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
@@ -26,9 +30,10 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/13 :** **Doc :** Update doc .md into .rst 
 
-## Logs 
+## <p align=center>Logs</p>
 
 Les logs regroupe les ajout et modification significative du dépot.
 
 * **2020/03/13** : Création du dépot.
+* **2020/03/13** : Upload Ver 0.1.0 de la doc -> Enrichissement des contents 
 
