@@ -8,6 +8,11 @@ PostGIS est une extension (plugin) du SGBD PostgreSQL, qui active la manipulatio
 
 Le nom provient de la contraction de PostgreSQL et de GIS (acronyme anglais de SIG). Concrètement, PostGIS permet le traitement d'objets spatiaux dans PostgreSQL, autorisant le stockage des objets graphiques en base de données pour les SIG, un peu comme le SDE[Quoi ?] de ESRI, la base de données spatiale d'IBM Informix Dynamic Server ou l'extension spatiale d'Oracle.
 
+
+
+IN PROGRESS
+
+
 .. toctree::
     :maxdepth: 2
 

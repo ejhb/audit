@@ -4,9 +4,10 @@ Neat-EO
 Intro
 -----
 
+IN PROGRESS
 
 
-`Source <https://datapink.io/datapink/neat-EO/>`_
+`Source <https://datapink.io/datapink/neat-EO/src/branch/master/README.md>`_
 
 
 .. toctree::
