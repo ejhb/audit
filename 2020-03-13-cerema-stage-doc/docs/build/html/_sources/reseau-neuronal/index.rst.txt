@@ -1,10 +1,5 @@
-================
-Réseau neuronal
-================
-
 .. toctree::
-   :maxdepth: 3
-   :titlesonly:
+   :maxdepth: 1
 
    neat-eo 
    yolo

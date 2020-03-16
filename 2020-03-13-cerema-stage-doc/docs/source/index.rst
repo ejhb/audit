@@ -12,14 +12,21 @@ Bienvenue dans la documentation med-data
    :hidden:
    :caption: Réseau neuronal
 
-   reseau-neuronal/index	  
+   reseau-neuronal/neat-eo
+   reseau-neuronal/yolo
+   reseau-neuronal/yolt	  
+
+
+
+
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Logiciel Géospatial
 
-   geospatial/index
+   geospatial/postgis
+   geospatial/qgis
 
 
 

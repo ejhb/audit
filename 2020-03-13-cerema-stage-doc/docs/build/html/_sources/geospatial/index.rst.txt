@@ -1,12 +1,10 @@
-===================
-Logiciel Géospatial
-===================
-
+qgis
+=========
 .. toctree::
-   :maxdepth: 3
-   :titlesonly:
+   :maxdepth: 1
+   :hidden:
 
-   qgis 
+   intro/
    postgis
    
    

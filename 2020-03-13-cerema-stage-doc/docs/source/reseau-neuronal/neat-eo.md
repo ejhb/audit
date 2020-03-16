@@ -1,3 +1,0 @@
-# Neat-EO
-
-## Intro
