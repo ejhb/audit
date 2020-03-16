@@ -11,8 +11,6 @@ Dans ce repertoire vous pourrez retrouver une documentation détaillé de la sta
 
 L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
-Responsable de la documentation : Joshua
-
 `Readme <https://github.com/ejhb/audit/blob/master/2020-03-13-cerema-stage-doc/README.md>`_
 
 Réseau Neuronal
