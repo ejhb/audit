@@ -10,3 +10,4 @@ Le nom provient de la contraction de PostgreSQL et de GIS (acronyme anglais de S
 
 .. toctree::
     :maxdepth: 2
+
