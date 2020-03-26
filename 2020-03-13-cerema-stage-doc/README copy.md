@@ -33,6 +33,8 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 * **2020/03/17 :** **Sampling :** Dataset terminé -> Upload (Hachem) sur Box fournie par Cerema -> Download Dataset (Daniel)
 
 * **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL (Joshua) **Training AI :** Premiers essais de training sur le dataset (Daniel).
+
+* **2020/03/19 :**
   
 
 
@@ -43,3 +45,4 @@ Les logs regroupe les ajout et modification significative du dépot.
 * **2020/03/13** : Création du dépot.
 * **2020/03/16** : Upload Ver 0.1.0 de la doc -> Enrichissement de contents.
 * **2020/03/18** : Upload Ver 0.1.1 de la doc sections Enrichis + ajouts de nouvelles sections -> Enrichessements de contents.
+* **2020/03/25** : Upload reporting
