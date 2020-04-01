@@ -25,7 +25,7 @@ class formulaire:
     def memeFamille(self, formulaire):
         return self.nom == fromulaire.nom
     
-ad = formulaire('Yacine', 'Data', '1996')
+ad = formulaire('John', 'Doe', '1996')
 ad.naissance = '1996'
 print(ad.age())
 print(ad.naissance)
@@ -61,7 +61,7 @@ class formulaire:
     def memeFamille(self, formulaire):
         return self.nom == fromulaire.nom
     
-ad = formulaire('Yacine', 'Data', ['1','9','9','6'])
+ad = formulaire('John', 'Doe', ['1','9','9','6'])
 print(ad.age())
 print(ad.naissance)
 
@@ -110,7 +110,7 @@ class formulaire:
     def memeFamille(self, formulaire):
         return self.nom == fromulaire.nom
     
-ad = formulaire('Yacine', 'Bourezak', ['1','9','9','6'])
+ad = formulaire('John', 'Doe', ['1','9','9','6'])
 print(ad.age())
 print(ad.naissance) 
 print(ad.nom)
