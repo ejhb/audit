@@ -47,8 +47,17 @@ class formulaire:
 
 class data(formulaire) :
     
-    def __init__(self, nom, prenom, naissance, id) :
-        self.id = id
+    def __init__(self, nom, prenom, naissance) :
+        formulaire.__init__(self, nom, prenom, naissance)
     
-    def _set_id(self, id) :
+    def build_id(self, id) :
+        self.id = self.nom[:2] + self.prenom[:2] + str(self.age())
+
+jd = data('Doe', 'John', 1999)
+ad = data('Doe', 'Jueeph', 2001) 
+jd.build_id()
+ad.build_id()
+print(jd.id)
+print(ad.id)
+
 

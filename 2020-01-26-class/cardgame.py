@@ -22,6 +22,8 @@ class Partie :
 valeurs = [i for i in range(1, 11)]
 couleurs = [i for i in range(1,5)]
 
+print(valeurs)
+print(couleurs)
 # on choisi le nombre de tour que va durée la partie et on initilise le score à 0
 
 nbTours = 7
