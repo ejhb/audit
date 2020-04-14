@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% set title = "Accueil" %}
+{% block content %}
+    <p>
+      Cette application à pour but de questionné une base de donnée à fin de sortir un dataframe.
+    </p>
+    <input type="button" value="Go " onclick="location.href='{{ url_for("edit_name") }}';" /> 
+    <input type="button" value="Saisir Message" onclick="location.href='{{ url_for("edit_message") }}';" /> 
+{% endblock %}
