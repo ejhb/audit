@@ -1,8 +1,8 @@
 use weather;
 
-drop table if exists IstanbulSunrise2;
+drop table if exists IstanbulSunrise;
 
-create table IstanbulSunrise2(
+create table IstanbulSunrise(
 DateTime DATETIME(6)
 ,State VARCHAR(100)
 ,Rain FLOAT(4)
