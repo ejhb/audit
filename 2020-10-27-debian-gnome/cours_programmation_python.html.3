@@ -1,0 +1,501 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Programmation Python pour les Statistiques et le Data Science</TITLE>
+	<STYLE>
+	<!--
+		TD P { margin-top: 0.05cm; margin-bottom: 0.1cm; line-height: 140%; font-family: "Calibri", sans-serif }
+		TD P.western { font-family: "Calibri", sans-serif; font-size: 10pt }
+		H1 {color: #47b8b8 ; margin-top: 0px; margin-bottom: 0px; font-family: "Calibri", sans-serif}
+		H1.western { font-family: "Calibri", sans-serif; font-size: 14pt; font-weight: medium; padding-bottom: 10px; padding-top:10px;}
+		P { margin-top: 0.05cm; margin-bottom: 0.15cm; line-height: 150% ; font-family: "Calibri", sans-serif}
+		P.western { font-family: "Calibri", sans-serif; font-size: 10pt }
+		P.annonce { font-family: "Calibri", sans-serif; font-size: 10pt; color:#60A010; margin-top:15px; margin-bottom:15px}
+		TH P { margin-top: 0.1cm; margin-bottom: 0cm; color: #000000; line-height: 100% }
+		TH P.western { font-family: "Calibri", sans-serif; font-size: 10pt }
+		TH P.eastern { font-family: "Calibri", sans-serif; font-size: 10pt; color:#008000; }
+	-->
+	</STYLE>
+	<link rel="stylesheet" href="style-support.css" type="text/css" />
+</HEAD>
+<BODY LANG="fr-FR" DIR="LTR">
+
+<div id="links">
+
+	<div class="sidetitlequinquies">
+	Formations
+	</div>
+	
+	<div class="side">
+	<a href="http://icom.univ-lyon2.fr/formation/master-2-informatique-statistique-et-informatique-sise" target="_blank">Master SISE (Stat.Info - Data Science)</a><br>
+	<a href="http://dis.univ-lyon2.fr/" target="_blank">D&eacute;partement DIS - ICOM Lyon 2</a><br>
+	</div>
+
+	<div class="sidetitlequinquies">
+	Programmation Python
+	</div>
+	
+	<div class="side">
+	<a href="#outils">Outils</a><br>
+	<a href="#slides">Slides pour le cours</a><br>
+	<a href="#supports">Supports de r&eacute;f&eacute;rence</a><br>
+	<a href="#tutoriels">Tutoriels Python</a><br>
+	<a href="#bigdata">Python et Data Science</a><br>
+	<a href="https://www.youtube.com/watch?v=FnJoAfGn0zs" target="_blank">Open source et data science</a><br>
+	<a href="https://www.youtube.com/watch?v=la9J4UpIgeQ" target="_blank">R, Python et enseignements</a><br>
+	</div>
+		
+	<div class="sidetitlequinquies">
+	Mes autres cours
+	</div>
+	
+	<div class="side">		
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_R.html" target="_blank">Programmation R</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_csharp.html" target="_blank">Programmation C#</a><br>	
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_delphi.html" target="_blank">Programmation Delphi</a><br>		
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/supports_data_mining.html" target="_blank">Data Mining - Data Science</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_text_mining.html" target="_blank">Text Mining - Web Mining</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_econometrie.html" target="_blank">Econom&eacute;trie</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_regression_logistique.html" target="_blank">R&eacute;gression logistique</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_analyse_discriminante.html" target="_blank">Analyse Discriminante</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_analyse_factorielle.html" target="_blank">Analyse Factorielle</a><br>
+	<a href="http://eric.univ-lyon2.fr/~ricco/cours/cours_excel.html" target="_blank">Excel avanc&eacute;</a>
+	</div>
+			
+	<div class="powered">
+	Site maintenu par<br><a href="http://eric.univ-lyon2.fr/~ricco/" target="_blank">Ricco Rakotomalala</a>
+	</div>
+
+</div>
+
+<div id="content" class="blogbody">
+
+<H1 CLASS="western">Cours de Programmation Python</H1>
+
+<P CLASS="western">Python est un langage de programmation orient&eacute; objet interpr&eacute;t&eacute;.</P>
+
+<P CLASS="western">Un programme &eacute;crit en Python n'est op&eacute;rationnel que si l'interpr&eacute;teur est disponible sur la machine (bien que des solutions de compilation existent). En contrepartie, il peut fonctionner d&egrave;s lors que l'interpr&eacute;teur est pr&eacute;sent, quel que soit le syst&egrave;me d'exploitation de la machine. Sous cet angle, on peut le consid&eacute;rer comme un langage multiplateformes.</P>
+
+<P CLASS="western">La syntaxe de Python est simple et claire, elle respecte les standards du domaine. Python propose les principales fonctionnalit&eacute;s de la programmation (actions conditionnelles, boucles, programmation modulaire), y compris les m&eacute;canismes de classes (h&eacute;ritage, surcharge des m&eacute;thodes, polymorphisme). Python se marie tr&egrave;s bien avec un cours d'algorithmie.</P>
+
+<P CLASS="western">La distribution Python int&egrave;gre un grand nombre de librairies. Elles couvrent un large choix de <a href="https://docs.python.org/3/library/index.html" target="_blank">domaines</a> (bases de donn&eacute;es, acc&egrave;s r&eacute;seaux, multim&eacute;dia, traitements syst&egrave;mes, compression, multithreading, ...).</P>
+
+<P CLASS="western">Outre les librairies standards, un grand nombre de paquetages (packages) d&eacute;velopp&eacute;s par des contributeurs ind&eacute;pendants donne acc&egrave;s &agrave; des fonctionnalit&eacute;s sp&eacute;cialis&eacute;es performantes. Ici &eacute;galement, la <a href="https://pypi.python.org/pypi?%3Aaction=index" target="_blank">liste</a> est particuli&egrave;rement longue. Ils nous donnent la possibilit&eacute; de programmer des applications dans quasiment tous les secteurs de l'informatique. Nous nous int&eacute;resserons en particulier &agrave; la programmation statistique, au machine learning, au big data et au <a href="#bigdata">data science</a>. Python y occupe de plus en plus une place de choix et vient m&ecirc;me taquiner R (News KDnuggets, Mai 2015, <a href="http://www.kdnuggets.com/2015/05/r-vs-python-data-science.html" target="_blank">"R vs Python for Data Science: The Winner is..."</a> ; ou encore DataCamp, Mai 2015, <a href="https://www.datacamp.com/community/tutorials/r-or-python-for-data-analysis" target="_blank">"Choosing R or Python for data analysis? An infographic."</a>)</P>
+ 
+<P class="western">Ce cours est dispens&eacute; en <a href="http://dis.univ-lyon2.fr/fr/nos-formations/formations-initiales/licence-idea-parcours-ids-informatique-decisionnelle-et-statistique-l3-preparation-au-master-d-informatique-specialite-ids-556811.kjsp?RH=1358239694591" target="_blank">L3 IDS</a> du D&eacute;partement Informatique et Statistique. L’objectif est double. Initier les &eacute;tudiants &agrave; la programmation Python, et les emmener vers le calcul scientifique et la programmation statistique &agrave; travers les packages sp&eacute;cialis&eacute;s.</P>
+ 
+<P class="western">Je l'approfondis en <a href="http://dis.univ-lyon2.fr/fr/nos-formations/formations-initiales/specialite-ids-parcours-m2-sise-statistique-et-informatique-socio-economiques--556814.kjsp?RH=1358239694591" target="_blank">Master SISE</a> du D&eacute;partement Informatique et Statistique. L'enseignement est alors axé sur la pratique du Machine Learning et le traitement des données complexes (texte - <i>text mining</i>, image - <i>image mining</i>).</P> 
+
+<H1 CLASS="western">Ressources en ligne</H1>
+
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#ccccff" CELLPADDING=2 CELLSPACING=0>
+
+	<TR>
+		<TH WIDTH=90% HEIGHT=25 BGCOLOR="#e6e6e6">
+			<P CLASS="western">Mat&eacute;riel p&eacute;dagogogique pour le cours - Slides, supports de cours, ouvrages, outils...</P>
+		</TH>
+		<TH WIDTH=10% BGCOLOR="#e6e6e6">
+			<P CLASS="western">Supports</P>
+		</TH>
+	</TR>
+	
+	<TR><TH colspan=2><P class="eastern"><a name="outils"></a>Outils</P></TH></TR>
+
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Le site du projet Python</b> - Le logiciel (setup) et de la documentation sont disponibles en ligne. Le logiciel peut fonctionner sous Windows, MacOS X et Linux. J'ai utilis&eacute; la version 3.4.3 de Python pour Windows pour pr&eacute;parer ce cours. <b>Python est libre, compl&egrave;tement gratuit.</b>
+			</P>
+		</TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 0.1cm"><FONT COLOR="#000080"><A HREF="https://www.python.org/" TARGET="_blank"><FONT COLOR="#000080"><IMG SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>	
+	</TR>
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Anaconda</b> - Une distribution gratuite pour Python. Elle int&egrave;gre nativement un grand nombre de packages, notamment ceux consacr&eacute;s au calcul scientifique et aux statistiques (numpy, scipy, pandas, scikit-learn, etc.). Elle int&egrave;gre &eacute;galement l'environnement de d&eacute;veloppement int&eacute;gr&eacute; Spyder et le shell IPython. C'est la distribution que nous privi&eacute;gierons pour le cours.</b>
+			</P>
+		</TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 0.1cm"><FONT COLOR="#000080"><A HREF="https://store.continuum.io/cshop/anaconda/" TARGET="_blank"><FONT COLOR="#000080"><IMG SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>	
+	</TR>	
+			
+	<TR><TH colspan=2><P class="eastern"><a name="slides"></a>Slides pour le cours de Programmation Python </P></TH></TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Introduction &agrave; la programmation Python</b>. Les bases du langage Python. Types de donn&eacute;es, affectation, calculs, structures algorithmiques (branchements conditionnels, boucles)</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PA - intro python - bases algorithmiques.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Programmation modulaire sous Python</b>. Proc&eacute;dures et fonctions, d&eacute;coupage des projets en modules.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PB - programmation modulaire avec python.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Collection d'objets sous Python</b>. Cr&eacute;ation des tuples, listes et dictionnaires. Indices et plages d'indices. Digressions sur les chaînes de caract&egrave;res.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PC - collections sous python.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>		
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Les classes sous Python</b>. Caract&eacute;ristiques d'une classe, champs et m&eacute;thodes. Instanciation. M&eacute;canismes de classes, h&eacute;ritage, surcharge des m&eacute;thodes, polymorphisme, variables de classe. Collections d'objets.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PD - classes sous python.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>		
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Les fichiers sous Python</b>. Cr&eacute;ation, &eacute;criture et lecture. Fichers texte brut, fichiers textes structur&eacute;s (format json et xml).</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PE - fichiers sous python.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Les vecteurs sous Python avec le package NumPy</b>. Cr&eacute;ation et manipulation des vecteurs. Utilisation des structures et fonctions du module NumPy.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PG - vecteurs avec numpy.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Les matrices sous Python avec le package NumPy</b>. Cr&eacute;ation et manipulation des matrices. Calcul matriciel (inversion de matrice, calcul des valeurs et vecteurs propres, etc.). Chargement et sauvegarde des donn&eacute;es tabulaires.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="./slides/PH - matrices avec numpy.pdf" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="acroread_24.png" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Statistiques sous Python avec le package SciPy</b>. Mise en oeuvre des techniques statistiques inf&eacute;rentielles (tests d'ad&eacute;quation, tests de normalit&eacute;, tests de conformit&eacute; &agrave; un standard, tests de comparaisons de populations, tests pour &eacute;chantillons appari&eacute;s, mesures d'association...) et exploratoires (essentiellement la classification automatique, k-means, classification ascendante hi&eacute;rarchique, affichage du dendrogramme)</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://tutoriels-data-mining.blogspot.com/2015/08/python-statistiques-avec-scipy.html" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Machine learning sous Python avec le package scikit-learn</b>. D&eacute;marche data mining, analyse pr&eacute;dictive : construction des mod&egrave;les, leur &eacute;valuation, d&eacute;termination des param&egrave;tres "optimaux" pour les algorithmes d'apprentissage, scoring et ciblage, s&eacute;lection de variables, validation crois&eacute;e.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://tutoriels-data-mining.blogspot.com/2015/09/python-machine-learning-avec-scikit.html" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Econom&eacute;trie sous Python avec le package StatsModels</b>. Econom&eacute;trie, r&eacute;gression lin&eacute;aire multiple, estimation des param&egrave;tres, moindres carr&eacute;s ordinaires (mco), tests de significativit&eacute;, diagnostic, analyse des r&eacute;sidus, d&eacute;tection des points atypiques et influents, pr&eacute;diction ponctuelle et par intervalle.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://tutoriels-data-mining.blogspot.fr/2015/09/python-econometrie-avec-statsmodels.html" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Python et Big Data</b>. Programmation Python sous Spark via la librairie PySpark. Installation et configuration de Spark. Accès aux fonctionnalités du package PySpark. Démarche de machine learning (analyse prédictive).</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://tutoriels-data-mining.blogspot.fr/2016/05/programmation-python-sous-spark-avec.html" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+		
+	<TR><TH colspan=2><P class="eastern"><a name="supports"></a>Supports et documentation &agrave; lire pour le cours de Programmation Python</P></TH></TR>		
+		
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Apprendre &agrave; programmer avec Python</b>, <i>de 
+			G&eacute;rard Swinnen</i>. Un cours d'introduction &agrave; la programmation Python. Toutes les notions de base y sont. Des chapitres que je n'aborderai pas vous permettront d'aller plus loin (ex. bases de donn&eacute;es, applications web, interface graphique, etc.). Cet ouvrage m'a beaucoup aid&eacute; dans la pr&eacute;paration de mon cours.</P> 
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://python.developpez.com/cours/TutoSwinnen/" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Cours de Python</b>, <i>de Patrick Fuchs et Pierre Poulain</i>. Un autre cours d'introduction &agrave; la programmation Python, tr&egrave;s bien fait &eacute;galement. L&agrave; aussi, je m'en suis beaucoup inspir&eacute;.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://python.developpez.com/tutoriels/cours-python-uni-paris7/" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Python</b>, <i>de Codecademy</i>. Un cours interactif vous permettant de progresser en testant au fur et &agrave; mesure votre code. Tr&egrave;s bien fait, on peut difficilement s'ennuyer en suivant le cours.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="https://www.codecademy.com/fr/tracks/python" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Introduction au langage de programmation Python 3</b>, <i>de Fabien Sinc&egrave;re</i>. Simple, concis, et tr&egrave;s didactique. Les notions essentielles de la programmation sont abord&eacute;es.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://fsincere.free.fr/isn/python/cours_python_ch3.php" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>python-simple.com</b>, <i>d'un Monsieur que je n'arrive pas &agrave; identifier mais qui a fait un excellent travail</i>. Con&ccedil;u plutôt comme un aide-m&eacute;moire, il est clair, tr&egrave;s complet et surtout tr&egrave;s bien organis&eacute;, on se rep&egrave;re tr&egrave;s facilement. Des modules standards et non standards (ex. numpy, scipy, matplotlib, etc.) sont d&eacute;crits.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://www.python-simple.com/" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Introduction &agrave; Python pour la programmation scientifique</b>, <i>de David Cassagne</i>. Ce support convient parfaitement &agrave; ce que nous faisons. Les bases y sont, et l'auteur effectue des incursions dans des domaines que nous n'aborderons pas, telle que la cr&eacute;ation des interfaces graphiques. Raison de plus pour le lire attentivement.</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://www.courspython.com/" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>		
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Python - Tutorial</b>, <i>du site <b>tutorialspoint</b></i>. En anglais mais tr&egrave;s accessible et tr&egrave;s bien organis&eacute;s. On y retrouve les principales notions abord&eacute;s dans notre cours, et plus m&ecirc;me (ex. traitement des expr&eacute;ssions r&eacute;guli&egrave;res, programmation cgi, bases de donn&eacute;es, etc.).</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://www.tutorialspoint.com/python/index.htm" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>		
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Introduction &agrave; la programmation Python</b>, <i>de R&eacute;mi Coulom et Alain Taquet</i>. Tr&egrave;s bon cours d'introduction qui correspond &agrave; peu pr&egrave;s &agrave; nos 3 premi&egrave;res s&eacute;ances. De nombreux exemples et exercices .</P> </TD>
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="http://www.grappa.univ-lille3.fr/~coulom/Python/" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>		
+	
+	<TR>
+		<TD>
+			<P CLASS="western"><b>Python 3.4. documentation</b>. On y trouve la documentation de r&eacute;f&eacute;rence du langage. La liste des packages standards est &eacute;galement disponible. Les descriptions sont exhaustives.</P> 
+		<TD>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-top: 
+			0.1cm"><FONT COLOR="#000080"><A HREF="https://docs.python.org/3/index.html" 
+			TARGET="_blank"><FONT COLOR="#000080"><IMG 
+			SRC="web.jpg" NAME="Image1" ALIGN=BOTTOM WIDTH=32 
+			HEIGHT=32 BORDER=1></FONT></A></FONT></P>
+		</TD>
+	</TR>	
+		
+	<TR><TH colspan=2><P class="eastern"><a name="tutoriels"></a>Tutoriels</P></TH></TR>
+
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Tutoriels data science pour Python</b>. Mise en oeuvre des algorithmes de machine learning sur des données réelles ou réalistes (analyses factorielles, svm, gradient boosting, régression lasso, régression linéaire multiple, classification automatique, etc.). Exemples de projets de data science menés sous Python (accès à l'API LinkedIn, détection des communautés dans les réseaux sociaux, catégorisation des SMS, etc.). Programmation Big Data (Spark avec PySpark, etc.).
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://tutoriels-data-mining.blogspot.fr/search/label/Python" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+	
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Installation de la distribution Anaconda</b>. Installation et configuration (charger des versions les plus r&eacute;centes) de la distribution Anaconda. Description succincte de l'EDI Spyder et de IPython.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://tutoriels-data-mining.blogspot.fr/2015/08/python-la-distribution-anaconda.html" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>		
+	
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Installation et mise &agrave; jour des packages</b> pour les irr&eacute;ductibles qui tiennent absolument &agrave; fonctionner avec la distribution officielle de Python.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://www.maths-algo.fr/algo/cours/cours_pyhon_installer.htm" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+	
+	
+	<TR><TH colspan=2><P class="eastern"><a name="bigdata"></a>Programmation Python - Statistique, Machine Learning et Data Science</P></TH></TR>
+
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>NumPy</b>. Le package de r&eacute;f&eacute;rence pour le calcul scientifique, il est sous-jacent &agrave; la tr&egrave;s grande majorit&eacute; des librairies d&eacute;di&eacute;s aux statistiques et au machine learning. Nous nous int&eacute;resserons surtout aux vecteurs et matrices, et aux fonctions associ&eacute;es.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://www.numpy.org/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+	
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>SciPy</b>, bas&eacute; sur NumPy, il propose de nombreuses fonctions statistiques que nous exploiterons.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://www.scipy.org/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>		
+	
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Python Scientific Lecture Notes</b>. Des supports de cours pour <i>NumPy</i> et <i>SciPy</i>.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="https://scipy-lectures.github.io/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Scikit-learn</b>. Un package de machine learning &eacute;volu&eacute;. Il propose les techniques exploratoires &eacute;volu&eacute;es (apprentissage supervis&eacute;, r&eacute;gression, clustering, r&eacute;duction de dimension, s&eacute;lection de mod&egrave;les, etc.) 
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://scikit-learn.org/stable/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+	
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>Statsmodels</b>. Un package pour la mod&eacute;lisation statistique. Il inclut des outils de r&eacute;gression, le traitement des s&eacute;ries temporelles, des tests statistiques param&eacute;triques et non-param&eacute;triques.
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://statsmodels.sourceforge.net/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+		
+	<TR>		
+		<TD>
+			<P CLASS="western"><b>pandas - Python Data Analysis Library</b>. Un package consacr&eacute; &agrave; l'analyse de donn&eacute;es. Il est surtout int&eacute;ressant pour les fonctions de pr&eacute;paration et de manipulation de donn&eacute;es. 
+			</P>
+		</TD>
+		<TD align="center">
+			<A HREF="http://pandas.pydata.org/" TARGET="_blank"><IMG SRC="web.jpg" ALIGN=BOTTOM WIDTH=32 HEIGHT=32 BORDER=1></A>
+		</TD>		
+	</TR>	
+				
+</TABLE>
+
+<HR>
+<a href="http://eric.univ-lyon2.fr/~ricco/" target="_blank">Ricco Rakotomalala &ndash; Universit&eacute; Lyon
+2</a>
+
+</div><!-- content -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3533495-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10574157; 
+var sc_invisible=1; 
+var sc_security="28bcc957"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="website
+statistics" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/10574157/0/28bcc957/1/"
+alt="website statistics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+</BODY>
+</HTML>
