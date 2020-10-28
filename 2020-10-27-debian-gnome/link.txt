@@ -491,9 +491,9 @@ scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
 </script>
 <noscript><div class="statcounter"><a title="website
-statistics" href="http://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="http://c.statcounter.com/10574157/0/28bcc957/1/"
+statistics" href="http://statcounter.com/
+target="_blank"><img class="statcounter
+src="http://c.statcounter.com/10574157/0/28bcc957/1/
 alt="website statistics"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
 

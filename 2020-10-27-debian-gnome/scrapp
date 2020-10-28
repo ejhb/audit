@@ -1,4 +1,33 @@
 #!/bin/bash
 
-wget http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html grep -E "*.pdf" http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html
+#####TESTED
+# wget http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html grep -E "*.pdf" http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html
 
+# wget http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html grep -Eo 'HREF="[^"]+\.pdf"' cours_programmation_python.html 
+
+# wget http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html grep -Eoi '<[aA][^>]+.pdf"' 
+
+# wget -- o http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html grep -E "(https?:)?//[^/\s]+/\S+\.(jpg|png|gif|pdf)" page.html -o | sed "s/(^https?)?\/\//https\:\/\//g" -r > urls.txt
+
+# grep -Po '(?<=href=")[^"]*' page.html
+
+#####TESTED
+
+# wget http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html -O page.html 
+
+# HREF="./slides/PH - matrices avec numpy.pdf"
+
+# sed -i -e 's/abc/QSD/g' page.html > link.txt
+
+# grep -Eo 'HREF="[^"]+\.pdf"' page.html 
+
+# sed -i -e 's/HREF/oui/g' page.html > link.txt
+
+# sed -e urls.txt
+
+wget -O sourceurls http://eric.univ-lyon2.fr/~ricco/cours/cours_programmation_python.html
+grep ".pdf" sourceurls | grep -Eo './slides/[^"]*pdf' > relurls
+wget --input-file=relurls --base=http://eric.univ-lyon2.fr/~ricco/cours/
+
+rm ./relurls
+rm ./sourceurls

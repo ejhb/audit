@@ -20,5 +20,3 @@ LXDE est conçu pour bien fonctionner avec les machines les moins puissantes : l
 
 
 MATE est la continuation de GNOME 2. Il fournit un environnement de bureau attrayant et intuitif en utilisant des représentations traditionnelles d'environnement bureau pour Linux et d'autres systèmes d'exploitation de type Unix.
-
-
