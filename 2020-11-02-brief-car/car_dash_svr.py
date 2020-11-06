@@ -32,8 +32,13 @@ resultat = regr.predict(x)
 app = dash.Dash()
 
 fig=go.Figure()
-fig.add_trace(go.Scatter(name='Values', x=df["Year"], y=df["Selling_Price"], mode='markers',label={'Year':'try'}))
+fig.add_trace(go.Scatter(name='Values', x=df["Year"], y=df["Selling_Price"], mode='markers'))
 fig.add_trace(go.Scatter(name='Regression', x=df["Year"], y=resultat, mode='lines'))
+
+fig.update_layout(title='Regression linéaire',
+                  yaxis_zeroline=False, xaxis_zeroline=False)
+fig.update_xaxes(title_text="Year")
+fig.update_yaxes(title_text="Selling Price")
 
 app.layout = html.Div([
     dcc.Graph(
