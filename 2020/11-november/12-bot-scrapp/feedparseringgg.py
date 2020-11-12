@@ -8,4 +8,4 @@ for entry in parser.entries:
     print('LINK :  ',entry.links[0].href)
     print('DESCRIPTION :  ',entry.summary)
     print('-------------------')
-
+    
