@@ -4,15 +4,12 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# useful for handling different item types with a single interface
-
-
 import logging
 import pymongo
 
-class JobsearchPipeline:
+class MongoPipeline(object):
 
-    collection_name = 'top_reddit_posts'
+    collection_name = 'top_posts'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
