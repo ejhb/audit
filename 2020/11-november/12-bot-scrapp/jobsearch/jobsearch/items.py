@@ -9,4 +9,9 @@ import scrapy
 class JobsearchItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title = scrapy.Field()
+    link = scrapy.Field()
+    pubDate = scrapy.Field()
+    description = scrapy.Field()
+    url = scrapy.Field()
     pass
