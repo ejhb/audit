@@ -29,7 +29,7 @@ class JobdataSpider(scrapy.Spider):
     allowed_domains = ['rss.jobsearch.monster.com']
 
     # Start the crawler at this URLs
-    start_urls = ['file:///home/joshua/Documents/git-workspace/audit/2020/11-november/12-bot-scrapp/data/dictdata.xml']
+    start_urls = ['view-source:https://www.careerone.com.au/jobs/br_PRC-People']
     #start_urls = ['http://rss.jobsearch.monster.com/rssquery.ashx?q={query}']
 
     thesaurus = ["machine learning", "machine", "learning", "big data", "big", "data"]

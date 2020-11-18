@@ -4,7 +4,7 @@ from scrapy.spiders import XMLFeedSpider
 class Spider(XMLFeedSpider):
        name = "BigDataScrap"
        allowed_domains = ['rss.jobsearch.monster.com']
-       start_urls = ['http://rss.jobsearch.monster.com/rssquery.ashx?q=big_data']   #Crawl BPMX
+       start_urls = ['file:///home/joshua/Documents/git-workspace/audit/2020/11-november/12-bot-scrapp/data/feed_audit.xml']   #Crawl BPMX
        itertag = 'item'
 
        def parse_node(self, response, node):

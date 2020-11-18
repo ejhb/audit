@@ -9,7 +9,7 @@ import pymongo
 
 class MongoPipeline(object):
 
-    collection_name = 'top_posts'
+    collection_name = 'academic_advising'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
