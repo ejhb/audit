@@ -1,0 +1,14 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<body>
+<div class="card">
+  <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" />
+  <h1 class="site-title">Queryman</h1>
+  <p class="subtitle">Ici tu affiché les stats d'un pokémon ou les comparé à un autre.</p>
+  <a href="/queried/" class="dash-link">
+    <span>Requête-man</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</body>
+{% endblock %}
