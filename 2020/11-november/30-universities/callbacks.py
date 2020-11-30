@@ -2,6 +2,9 @@ from dash.dependencies import Input, Output
 
 from app import app
 
+
+
+
 @app.callback(
     Output('app-home-display-value', 'children'),
     Input('app-home-dropdown', 'value'))
