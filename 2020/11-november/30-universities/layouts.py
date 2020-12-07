@@ -1,3 +1,7 @@
+#-----------------------------------------------------------------------------------------------------------------------------------------#
+#                                                          IMPORT                                                                         #
+#-----------------------------------------------------------------------------------------------------------------------------------------#
+
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
@@ -75,7 +79,9 @@ Un rendu individuel est demandé. Vous pourrez travailler en groupe de 5 ou 6. L
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 #                                                   LAYOUT ONE                                                                            #
 #-----------------------------------------------------------------------------------------------------------------------------------------#
-#------------------------------------------------------TABLE------------------------------------------------------------------------------#
+
+#------------------------------------------------------DATAFRAME--------------------------------------------------------------------------#
+
 df = pd.read_csv("./data/timesData.csv")
 df2016 = df[df.year == 2016].iloc[:50,:]
 df2016.world_rank = [int(each.replace('=','')) for each in df2016.world_rank]
@@ -90,7 +96,9 @@ df2016.international = pd.to_numeric(df2016.international, errors='coerce')
 df2016.income  = pd.to_numeric(df2016.income , errors='coerce')
 df2016.total_score  = pd.to_numeric(df2016.total_score , errors='coerce')
 df2016.international_students  = pd.to_numeric(df2016.international_students , errors='coerce')
+
 #------------------------------------------------------GRAPH------------------------------------------------------------------------------#
+
 #------------------------------------------------------FIGURE1----------------------------------------------------------------------------#
 df2016_heat = df2016[['international','num_students','student_staff_ratio','international_students','female_male_ratio','teaching','research','citations','income','total_score']]
 corr = df2016_heat.corr()
@@ -262,7 +270,8 @@ layout1 = html.Div(
 layout2 =  html.Div(
                 style={'height': '320vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
                 children=[])
-#                                                   LAYOUT TREE                                                                            #
+#-----------------------------------------------------------------------------------------------------------------------------------------#
+#                                                   LAYOUT TREE                                                                           #
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 
 layout3 =  html.Div(
