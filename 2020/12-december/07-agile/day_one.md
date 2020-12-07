@@ -2,8 +2,12 @@
 
 ### Présentation pdf 
 
+[Présentation format PDF](https://github.com/ejhb/audit/blob/master/2020/12-december/07-agile/pdf/methodes-de-presentation.pdf)
 
 #### Exercice en solo puis en team : 
+
+
+[Test NASA format PDF](https://github.com/ejhb/audit/blob/master/2020/12-december/07-agile/pdf/test-nasa.pdf)
 
 Team : Hachem Julien Ludo Fatima Joshua Ines Jean-Pierre
 
