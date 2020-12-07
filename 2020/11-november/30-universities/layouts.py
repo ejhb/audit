@@ -77,7 +77,7 @@ Un rendu individuel est demandé. Vous pourrez travailler en groupe de 5 ou 6. L
 ])
 
 #-----------------------------------------------------------------------------------------------------------------------------------------#
-#                                                   LAYOUT ONE                                                                            #
+#                                                     LAYOUT ONE                                                                          #
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 
 #------------------------------------------------------DATAFRAME--------------------------------------------------------------------------#
@@ -149,7 +149,6 @@ scat_matrix_layout = go.Layout(
                     paper_bgcolor='rgba(0,0,0,0.65)',
                     plot_bgcolor='rgba(0,0,0,0.65)')
 scat_matrix_lay1 = go.Figure(data = scat_matrix,layout=scat_matrix_layout)
-scat_matrix_lay1
 #------------------------------------------------------FIGURE3----------------------------------------------------------------------------#
 scat_matrix2 = go.Splom(
                 dimensions=[dict(label='inter',
@@ -180,12 +179,7 @@ scat_matrix2_layout = go.Layout(
                     plot_bgcolor='rgba(0,0,0,0.60)',
                     )
 scat_matrix2_lay1 = go.Figure(data = scat_matrix2,layout=scat_matrix2_layout)
-
-scat_matrix2_lay1.update_xaxes(tickangle = 90)
-scat_matrix2_lay1
 #-------------------------------------------------------DASH------------------------------------------------------------------------------#
-
-
 layout1 = html.Div(
             style={'height': '320vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
             children=[
@@ -261,8 +255,6 @@ layout1 = html.Div(
                                     ])
                                 ])
 ])
-
-
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 #                                                   LAYOUT TWO                                                                            #
 #-----------------------------------------------------------------------------------------------------------------------------------------#
