@@ -49,3 +49,19 @@ Résultat
 
 14 point d'écart en team.
 
+
+## Créé un concept pour un PERSONA ( ALICE )
+
+Un blog type RS en particulier Insta qui répondrait à se désire de se publier et de se tenir informé, le concept original qui l'a différencerai des autres serait centré sur sa personnalité, sur la manière de mettre en avant sa merch, un évenement communautaire comme un concours, utilisation d'une platforme d'importe export créative comme etsy ou vinted
+
+## Avec l'application Marvel créé un proto de ton concept 
+
+[link vers le proto](https://marvelapp.com/prototype/ff164ea/screen/75272880)
+
+### Appel à projet 
+
+[link vers le pdf](./pdf/appel_a_projet.pdf)
+
+### Notre projet avec les méthodes agiles 
+
+[link cers le pdf](./pdf/appel_a_projet_bleu.pdf)
