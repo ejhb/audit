@@ -1,0 +1,97 @@
+#-------------------------------------------------------IMPORT----------------------------------------------------------------------------#
+#dieu
+import numpy as np
+import pandas as pd
+import string
+from collections import defaultdict
+from time import time
+# Sklearn
+from sklearn.feature_extraction.text import CountVectorizer , TfidfVectorizer , TfidfTransformer
+from sklearn.model_selection import ShuffleSplit
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.metrics import recall_score , precision_score ,f1_score
+from sklearn import metrics , svm
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import SGDClassifier, LogisticRegression, LogisticRegressionCV
+from sklearn.naive_bayes import MultinomialNB, CategoricalNB, ComplementNB, BernoulliNB
+from sklearn.svm import SVC, LinearSVC
+#vis
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objs as go
+import plotly as py
+from plotly.offline import init_notebook_mode, iplot, plot
+#NLP
+import nltk
+from nltk.corpus import stopwords , wordnet as wn
+from nltk import wordpunct_tokenize , WordNetLemmatizer ,sent_tokenize ,  word_tokenize
+from nltk.stem import PorterStemmer , LancasterStemmer
+from nltk.stem.snowball import SnowballStemmer  
+#Dash
+import dash_core_components as dcc
+import dash_html_components as html
+import dash_bootstrap_components as dbc
+import dash_table
+
+def get_top_n_words(corpus,d,n=None):
+    vec = CountVectorizer().fit(corpus)
+    bag_of_words = vec.transform(corpus)
+    sum_words = bag_of_words.sum(axis=0) 
+    words_freq = [(word, sum_words[0, idx]) for word, idx in     vec.vocabulary_.items()]
+    if d == "up" :
+        words_freq =sorted(words_freq, key = lambda x: x[1], reverse=True)
+        return words_freq[:n]
+    elif d == "down" :
+        words_freq=sorted(words_freq, key = lambda x: x[1], reverse=False)
+        return words_freq[:n]
+
+def tokenize(corpus):
+    #text = ''.join([ch for ch in text if ch not in dataEF["Text"]])
+    tokens = nltk.word_tokenize()
+    lemma = WordNetLemmatizer()
+    stemmer = SnowballStemmer("english")
+    # tokens = [lemmatizer.lemmatize(token) for token in tokens] 
+    #OR
+    # tokens = [lemma.lemmatize(lemma.lemmatize(lemma.lemmatize(w,'v'),'n'),'a')for w in tokens]
+    return [stemmer.stem(token) for token in tokens]
+
+def run_pipes(pipes, splits=10, test_size=0.2, seed=42):  
+    res = defaultdict(list)
+    spliter = ShuffleSplit(n_splits=splits, test_size=test_size, random_state=seed)
+    for idx_train, idx_test in spliter.split(corpus):
+        for pipe in pipes:
+            # name of the model
+            name = "-".join([x[0] for x in pipe.steps])
+            
+            # extract datasets
+            X_train = corpus[idx_train]
+            X_test = corpus[idx_test]
+            y_train = targets[idx_train]
+            y_test = targets[idx_test]
+            
+            # Learn
+            start = time()
+            pipe.fit(X_train, y_train)
+            fit_time = time() - start
+            
+            # predict and save results
+            y = pipe.predict(X_test)
+            res[name].append([
+                fit_time,
+                f1_score(y_test, y, average = 'micro')
+            ])
+    return res
+
+def print_table(res):
+    # Compute mean and std
+    final = {}
+    for model in res:
+        arr = np.array(res[model])
+        final[model] = {
+            "time" : arr[:, 0].mean().round(2),
+            "f1_score": [arr[:,1].mean().round(5),arr[:,1].std().round(5)]
+                    }
+
+    df = pd.DataFrame.from_dict(final, orient="index").round(3)
+    return df

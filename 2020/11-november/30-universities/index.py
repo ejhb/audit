@@ -2,7 +2,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-
 from app import app
 from layouts import layoutHome,layout1, layout2 ,layout3
 import callbacks
