@@ -17,11 +17,10 @@ import pandas as pd
 
 #-------------------------------------------------------DASH------------------------------------------------------------------------------#
 layoutHome = html.Div(
-                style={'height': '180vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
+                style={'height': '220vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
                 children=[
-                    html.Div(id='app-home-display-value'),
                     html.Div(
-                        style={'padding-top':'30px'},
+                        style={'padding-top':'30px'}, 
                         className="app-header",
                         children=[
                             html.Div('La roue des émotions',className="app-header--title")]),
@@ -29,7 +28,7 @@ layoutHome = html.Div(
                                 style={'height':'70vh', 'display':'flex', 'justify-content':' space-around'}, 
                                 children=[
                                     html.Div(
-                                        style={'height':'70vh', 'width':'80vw','padding-top':'30px','margin-top':'2vh'}, 
+                                        style={'height':'70vh', 'width':'80vw','padding-top':'30px','margin-top':'2vh','margin-bop':'2vh'}, 
                                         children=[
                                             dcc.Markdown('''## Contexte du projet
 Depuis quelques années, les dispositifs de communication médiatisée par ordinateur (CMO) sont massivement utilisés, aussi bien dans les activités professionnelles que personnelles. Ces dispositifs permettent à des participants distants physiquement de communiquer. La plupart implique une communication écrite médiatisée par ordinateur (CEMO) : forums de discussion, courrier électronique, messagerie instantanée. Les participants ne s’entendent pas et ne se voient pas mais peuvent communiquer par l’envoi de messages écrits, qui combinent, généralement, certaines caractéristiques des registres écrit et oral (Marcoccia, 2000a ; Marcoccia, Gauducheau, 2007 ; Riva, 2001).
@@ -60,6 +59,7 @@ Vous devrez ensuite présenter vos résultats sous la forme d'un dashboard multi
                     html.Div([
                     dbc.Button("Page 1", color="primary",href="/apps/page1" ,id="loading-button"),
                     dbc.Spinner(html.Div(id="loading-output"))]),
+                    html.Br(),
                     dcc.Markdown('''
 **Une deuxième page du Dashboard sera dédiée aux résultats issues des classifications . Il vous est demandé de comparer les résultats, d'au moins 5 classifiers, présentés dans un tableau permettant de visualiser vos mesures.** Sur cette page de dashboard pourra se trouver par exemple, des courbes de rappel de précision (permette de tracer la précision et le rappel pour différents seuils de probabilité), un rapport de classification (un rapport de classification visuel qui affiche la precision, le recall, le f1-score, support, ou encore une matrice de confusion ou encore une graphique permettant de visualiser les mots les plus représentatif associé à chaque émotions.**Héberger le dashboard sur le cloud de visualisation de données Héroku (https://www.heroku.com/).**
 
@@ -70,6 +70,7 @@ Vous devrez ensuite présenter vos résultats sous la forme d'un dashboard multi
                 html.Div([
                 dbc.Button("Page 2", color="primary",href="/apps/page1" ,id="loading-button"),
                 dbc.Spinner(html.Div(id="loading-output"))]),
+                html.Br(),
                 dcc.Markdown('''## Modalités pédagogiques
 Vos travaux devront être “poussés” sur Github et sur Heroku au plus tard le **Jeudi 17 Décembre à 17h30** (les liens seront accessibles via Simplonline).
 
@@ -78,7 +79,14 @@ Vos travaux devront être “poussés” sur Github et sur Heroku au plus tard l
 Travaille en groupe de 5/6 + rôles durée: 7 jours
                     '''),
         dcc.Markdown('''## Critères de performance
-Un dashboard Dash permettra de visualiser et de comparer les performances issues de différents classifiers.''')
+Un dashboard Dash permettra de visualiser et de comparer les performances issues de différents classifiers.'''),
+                html.Div([
+                dbc.Button("Page 3", color="primary",href="/apps/page2" ,id="loading-button"),
+                dbc.Spinner(html.Div(id="loading-output"))]),
+                html.Br(),
+                html.Div([
+                dbc.Button("Page 4", color="primary",href="/apps/page3" ,id="loading-button"),
+                dbc.Spinner(html.Div(id="loading-output"))]),
         ])
     ])
 ])
@@ -116,23 +124,19 @@ Un dashboard Dash permettra de visualiser et de comparer les performances issues
 layout1 = html.Div(
             style={'height': '320vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
             children=[
-                html.Br(),
-                html.Div(
-                    className="app-header",
-                    children=[html.Div('Page 1',className="app-header--title")]),
-                #Graph section
+                    html.Div('Page 1',style={'text-align':'center','font-size':'40px','padding':'30px'}),
                     html.Article(style={'padding-left':'5vw','display':'flex','width':'20vw'},
                                 children=[               
                                     html.Div([
                                     dbc.Button("Back to head", color="primary",href="/apps/page1" ,id="loading-button"),
                                     dbc.Spinner(html.Div(id="loading-output"))]
                                             ),
-                    html.Div(style={'margin-left':'0.5vw'},
-                             children=[
-                                dbc.Button("Back to home", color="primary",href="/" ,id="loading-button"),
-                                dbc.Spinner(html.Div(id="loading-output"))
-                                    ])
-                                ])
+                                    html.Div(style={'margin-left':'0.5vw'},
+                                    children=[
+                                        dbc.Button("Back to home", color="primary",href="/" ,id="loading-button"),
+                                        dbc.Spinner(html.Div(id="loading-output"))
+                                            ])
+                                        ])
 ])
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 #                                                   LAYOUT TWO                                                                            #
