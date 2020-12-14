@@ -119,8 +119,7 @@ layout1 = html.Div(
                 html.Br(),
                 html.Div(
                     className="app-header",
-                    children=[html.Div('Data Table',className="app-header--title")]),
-                html.H1('Matrice de corrélation',style={'textAlign': 'center','font-family':'sans-serif','margin-bottom':'2vh'}),
+                    children=[html.Div('Page 1',className="app-header--title")]),
                 #Graph section
                     html.Article(style={'padding-left':'5vw','display':'flex','width':'20vw'},
                                 children=[               
