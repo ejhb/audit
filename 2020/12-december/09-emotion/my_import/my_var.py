@@ -1,8 +1,33 @@
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_table
-import pandas as pd
+#-----------------------------------------------------------------------------------------------------------------------------------------#
+#                                                          IMPORT                                                                         #
+#-----------------------------------------------------------------------------------------------------------------------------------------#
 
+from my_import.my_lib import *
+from my_import.my_func import get_top_n_words, tokenize , run_pipes , print_table
+#------------------------------------------------------DATAFRAME--------------------------------------------------------------------------#
+df0_brut = pd.read_csv('./data/emotion_final.csv')
+df0_pre = pd.read_csv('./data/emotion_final.csv')
+
+exclude = set(string.punctuation) # exclude = punctuation strings
+stop_word = stopwords.words('english') # we choosing stop words of english dict
+stop_word_punct = stop_word.extend(exclude) # we add strings punctions to stop word dict
+lemma = WordNetLemmatizer()
+stemmer = SnowballStemmer("english") # we choosing the language english for the stemmization 
+porter = PorterStemmer() 
+lancaster=LancasterStemmer()
+
+df0_pre['Text'] = df0_pre.apply(lambda row: word_tokenize(row['Text']), axis=1) # Tokenization
+df0_pre['Text'] = df0_pre['Text'].apply(lambda x: [item for item in x if item not in stop_word]) # Stop wordization :) coucou anne-laure
+df0_pre['Text'] = [[lemma.lemmatize(word) for word in each if word not in stop_word] for each in df0_pre['Text']]  # Lemmization
+# df_pre['Text'] = df1['Text'].apply(lambda x: [stemmer.stem(y) for y in x]) # Stem every word. with snowball('english')
+# df_pre['Text'] = df1['Text'].apply(lambda x: [porter.stem(y) for y in x]) # Stem every word. with porter
+# df_pre['Text'] = df1['Text'].apply(lambda x: [lancaster.stem(y) for y in x]) # Stem every word. with lancaster
+dz = df0_pre['Text']
+dz = [[' '.join(i)][0] for i in dz] 
+df0_pre['Text'] = dz
+
+
+#-------------------------------------------------------MARKDOWN--------------------------------------------------------------------------#
 md1= dcc.Markdown('''## Contexte du projet
 Depuis quelques années, les dispositifs de communication médiatisée par ordinateur (CMO) sont massivement utilisés, aussi bien dans les activités professionnelles que personnelles. Ces dispositifs permettent à des participants distants physiquement de communiquer. La plupart implique une communication écrite médiatisée par ordinateur (CEMO) : forums de discussion, courrier électronique, messagerie instantanée. Les participants ne s’entendent pas et ne se voient pas mais peuvent communiquer par l’envoi de messages écrits, qui combinent, généralement, certaines caractéristiques des registres écrit et oral (Marcoccia, 2000a ; Marcoccia, Gauducheau, 2007 ; Riva, 2001).
 
@@ -52,21 +77,21 @@ md_source = dcc.Markdown('''
                 * [From Sentiment Analysis to Emotion Recognition: A NLP story](https://realpython.com/sentiment-analysis-python/#how-classification-works)
                 ''')
 
-df1 = pd.read_csv('./data/emotion_final.csv')
-df2 = df1.iloc[:50,:]
 
-table1 = dash_table.DataTable(
-                                    columns=[{'id': c, 'name': c} for c in df2.columns],
-                                    data= df2.to_dict('records'),
+#------------------------------------------------------DASHTABLE--------------------------------------------------------------------------#
+
+table0_brut = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df0_brut.columns],
+                                    data= df0_brut.to_dict('records'),
                                     #Style table as list view
                                     #style_as_list_view=True,
                                     fixed_rows={'headers': True},
-                                    fixed_columns={'headers': True, 'data' :1},
+                                    # fixed_columns={'headers': True, 'data' :1},
                                     export_format='csv',
                                     style_table={'opacity':'0.80',
                                                 'maxHeight': '50ex',
-                                                'overflow': 'auto',
-                                                'width': '100%',
+                                                'overflow': 'scrol',
+                                                'width': '100%',    
                                                 'minWidth': '100%',
                                                 'margin-left':'auto',
                                                 'margin-right':'auto'},
@@ -77,6 +102,7 @@ table1 = dash_table.DataTable(
                                         'whiteSpace': 'normal','textAlign':'center'}],
                                     #Line strip
                                     style_cell={'color': 'black'},
+                                    # page_size = 15,
                                     style_data_conditional=[{
                                             'if': {'row_index': 'odd'},
                                             'backgroundColor': 'rgb(248, 248, 248)'}],
@@ -84,3 +110,66 @@ table1 = dash_table.DataTable(
                                         'backgroundColor': 'rgb(50, 50, 50)',
                                         'fontWeight': 'bold',
                                         'color':'white'})
+
+table0_pre = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df0_pre.columns],
+                                    data= df0_pre.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.80',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scrol',
+                                                'width': '100%',    
+                                                'minWidth': '100%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        # all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})
+                            
+#------------------------------------------------------GRAPH------------------------------------------------------------------------------#
+
+#------------------------------------------------------FIGURE1----------------------------------------------------------------------------#
+x = df0_brut.Text
+y = df0_brut.Emotion
+
+freq_top = get_top_n_words(x,"up",100)
+
+df_up = pd.DataFrame(freq_top, columns =['Word','Number of times'])
+y_nbr = df_up['Number of times']
+x_word = df_up['Word']
+
+freq_p1 = go.Bar(
+                x = x_word.head(30),
+                y = y_nbr,
+                name = "Le score universitaire pour le transfert de connaissances par pays",
+                marker = dict(color = 'rgba(255, 87, 51, 0.5)', line = dict(color ='rgb(0,0,0)',width =2.5)),
+                text = df_up['Word'])
+
+freq_lay_p1 = go.Layout(barmode = "group",
+                  title = 'Fréquence d’apparition des mots ',
+                  yaxis = dict(title = 'word frequency'),
+                  xaxis = dict(title = 'word rank'),
+                  font=dict(
+                        family="sans serif",
+                        size=14,
+                        color="white"),
+                    paper_bgcolor='rgba(0,0,0,0.65)',
+                    plot_bgcolor='rgba(0,0,0,0.65)')
+freq_word_bar = go.Figure(data = freq_p1 , layout = freq_lay_p1)
+

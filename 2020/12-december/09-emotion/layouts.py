@@ -3,8 +3,9 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 
 import sys
-from my_import.my_func import * 
-from my_import.my_var import md1 , md2 , md3 , md_source ,table1
+from my_import.my_lib import *
+from my_import.my_func import get_top_n_words, tokenize , run_pipes , print_table
+from my_import.my_var import md1 , md2 , md3 , md_source ,table0_brut , table0_pre , freq_word_bar
 
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 #                                                    LAYOUT HOME                                                                          #
@@ -53,41 +54,6 @@ Un dashboard Dash permettra de visualiser et de comparer les performances issues
 
 #------------------------------------------------------DATAFRAME--------------------------------------------------------------------------#
 
-#------------------------------------------------------GRAPH------------------------------------------------------------------------------#
-
-#------------------------------------------------------FIGURE1----------------------------------------------------------------------------#
-df1 = pd.read_csv('./data/emotion_final.csv')
-
-x = df1.Text
-y = df1.Emotion
-
-freq_top = get_top_n_words(x,"up",100)
-
-
-df_up = pd.DataFrame(freq_top, columns =['Word','Number of times'])
-y_nbr = df_up['Number of times']
-x_word = df_up['Word']
-
-freq_p1 = go.Bar(
-                x = x_word.head(30),
-                y = y_nbr,
-                name = "Le score universitaire pour le transfert de connaissances par pays",
-                marker = dict(color = 'rgba(255, 87, 51, 0.5)', line = dict(color ='rgb(0,0,0)',width =2.5)),
-                text = df_up['Word'])
-
-freq_lay_p1 = go.Layout(barmode = "group",
-                  title = 'Fréquence d’apparition des mots ',
-                  yaxis = dict(title = 'word frequency'),
-                  xaxis = dict(title = 'word rank'))
-freq_word_bar = go.Figure(data = freq_p1 , layout = freq_lay_p1)
-
-
-#------------------------------------------------------FIGURE2----------------------------------------------------------------------------#
-
-#------------------------------------------------------FIGURE3----------------------------------------------------------------------------#
-
-#-------------------------------------------------------DASH------------------------------------------------------------------------------#
-
 
 layout1 = html.Div(
             style={'height': '320vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
@@ -96,8 +62,11 @@ layout1 = html.Div(
                 html.Section(   
                     style={'padding-left':'5vw','padding-right':'5vw','margin-bottom':'2vh'}, 
                     children=[
-                        table1,
+                        table0_brut,
+                        html.Br(),
+                        html.Br(),
                         dcc.Graph(figure=freq_word_bar),
+                        table0_pre
                         ]),
                         html.Article(style={'padding-left':'5vw','display':'flex','width':'20vw'},
                             children=[               
