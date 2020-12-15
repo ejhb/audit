@@ -88,8 +88,13 @@ layout1 = html.Div(
 
 layout2 =  html.Div(
                 style={'height': '320vh','color':'white','backgroundImage': 'url(../assets/pexels-jessica-lewis-583846.jpg)','background-attachment':'fixed'},
-                children=[]
-                )
+                children=[dbc.Tabs(
+    [
+        dbc.Tab(table0_brut, label="Tab 1"),
+        dbc.Tab(table0_pre, label="Tab 2"),
+    ]
+) ]
+)
 #-----------------------------------------------------------------------------------------------------------------------------------------#
 #                                                   LAYOUT TREE                                                                           #
 #-----------------------------------------------------------------------------------------------------------------------------------------#
