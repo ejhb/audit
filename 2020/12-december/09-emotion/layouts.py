@@ -91,7 +91,7 @@ layout2 =  html.Div(
                 children=[dbc.Tabs(
     [
         dbc.Tab(table0_brut, label="Tab 1"),
-        dbc.Tab(table0_pre, label="Tab 2"),
+        dbc.Tab(table0_brut, label="Tab 2"),
     ]
 ) ]
 )

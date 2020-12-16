@@ -1,6 +1,6 @@
 from dash.dependencies import Input, Output
 import time
-from app import app
+from app import app , server
 from layouts import layoutHome,layout1, layout2 ,layout3
 # from my_import.my_var import table0_brut , table0_pre 
 

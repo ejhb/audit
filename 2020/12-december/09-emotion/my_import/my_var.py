@@ -8,23 +8,23 @@ from my_import.my_func import get_top_n_words, tokenize , run_pipes , print_tabl
 df0_brut = pd.read_csv('./data/emotion_final.csv')
 df0_pre = pd.read_csv('./data/emotion_final.csv')
 
-exclude = set(string.punctuation) # exclude = punctuation strings
-stop_word = stopwords.words('english') # we choosing stop words of english dict
-stop_word_punct = stop_word.extend(exclude) # we add strings punctions to stop word dict
-lemma = WordNetLemmatizer()
-stemmer = SnowballStemmer("english") # we choosing the language english for the stemmization 
-porter = PorterStemmer() 
-lancaster=LancasterStemmer()
+# # # exclude = set(string.punctuation) # exclude = punctuation strings
+# # # stop_word = stopwords.words('english') # we choosing stop words of english dict
+# # # stop_word_punct = stop_word.extend(exclude) # we add strings punctions to stop word dict
+# # # lemma = WordNetLemmatizer()
+# # # stemmer = SnowballStemmer("english") # we choosing the language english for the stemmization 
+# # # porter = PorterStemmer() 
+# # # lancaster=LancasterStemmer()
 
-df0_pre['Text'] = df0_pre.apply(lambda row: word_tokenize(row['Text']), axis=1) # Tokenization
-df0_pre['Text'] = df0_pre['Text'].apply(lambda x: [item for item in x if item not in stop_word]) # Stop wordization :) coucou anne-laure
-df0_pre['Text'] = [[lemma.lemmatize(word) for word in each if word not in stop_word] for each in df0_pre['Text']]  # Lemmization
-# df_pre['Text'] = df1['Text'].apply(lambda x: [stemmer.stem(y) for y in x]) # Stem every word. with snowball('english')
-# df_pre['Text'] = df1['Text'].apply(lambda x: [porter.stem(y) for y in x]) # Stem every word. with porter
-# df_pre['Text'] = df1['Text'].apply(lambda x: [lancaster.stem(y) for y in x]) # Stem every word. with lancaster
-dz = df0_pre['Text']
-dz = [[' '.join(i)][0] for i in dz] 
-df0_pre['Text'] = dz
+# # # df0_pre['Text'] = df0_pre.apply(lambda row: word_tokenize(row['Text']), axis=1) # Tokenization
+# # # df0_pre['Text'] = df0_pre['Text'].apply(lambda x: [item for item in x if item not in stop_word]) # Stop wordization :) coucou anne-laure
+# # # df0_pre['Text'] = [[lemma.lemmatize(word) for word in each if word not in stop_word] for each in df0_pre['Text']]  # Lemmization
+# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [stemmer.stem(y) for y in x]) # Stem every word. with snowball('english')
+# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [porter.stem(y) for y in x]) # Stem every word. with porter
+# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [lancaster.stem(y) for y in x]) # Stem every word. with lancaster
+# # # dz = df0_pre['Text']
+# # # dz = [[' '.join(i)][0] for i in dz] 
+# # # df0_pre['Text'] = dz
 
 
 #-------------------------------------------------------MARKDOWN--------------------------------------------------------------------------#
@@ -111,36 +111,36 @@ table0_brut = dash_table.DataTable(
                                         'fontWeight': 'bold',
                                         'color':'white'})
 
-table0_pre = dash_table.DataTable(
-                                    columns=[{'id': c, 'name': c} for c in df0_pre.columns],
-                                    data= df0_pre.to_dict('records'),
-                                    #Style table as list view
-                                    #style_as_list_view=True,
-                                    fixed_rows={'headers': True},
-                                    # fixed_columns={'headers': True, 'data' :1},
-                                    export_format='csv',
-                                    style_table={'opacity':'0.80',
-                                                'maxHeight': '50ex',
-                                                'overflow': 'scrol',
-                                                'width': '100%',    
-                                                'minWidth': '100%',
-                                                'margin-left':'auto',
-                                                'margin-right':'auto'},
-                                    #Cell dim + textpos
-                                    style_cell_conditional=[{'height': 'auto',
-                                        # all three widths are needed
-                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
-                                        'whiteSpace': 'normal','textAlign':'center'}],
-                                    #Line strip
-                                    style_cell={'color': 'black'},
-                                    # page_size = 15,
-                                    style_data_conditional=[{
-                                            'if': {'row_index': 'odd'},
-                                            'backgroundColor': 'rgb(248, 248, 248)'}],
-                                    style_header={
-                                        'backgroundColor': 'rgb(50, 50, 50)',
-                                        'fontWeight': 'bold',
-                                        'color':'white'})
+# table0_pre = dash_table.DataTable(
+#                                     columns=[{'id': c, 'name': c} for c in df0_pre.columns],
+#                                     data= df0_pre.to_dict('records'),
+#                                     #Style table as list view
+#                                     #style_as_list_view=True,
+#                                     fixed_rows={'headers': True},
+#                                     # fixed_columns={'headers': True, 'data' :1},
+#                                     export_format='csv',
+#                                     style_table={'opacity':'0.80',
+#                                                 'maxHeight': '50ex',
+#                                                 'overflow': 'scrol',
+#                                                 'width': '100%',    
+#                                                 'minWidth': '100%',
+#                                                 'margin-left':'auto',
+#                                                 'margin-right':'auto'},
+#                                     #Cell dim + textpos
+#                                     style_cell_conditional=[{'height': 'auto',
+#                                         # all three widths are needed
+#                                         'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+#                                         'whiteSpace': 'normal','textAlign':'center'}],
+#                                     #Line strip
+#                                     style_cell={'color': 'black'},
+#                                     # page_size = 15,
+#                                     style_data_conditional=[{
+#                                             'if': {'row_index': 'odd'},
+#                                             'backgroundColor': 'rgb(248, 248, 248)'}],
+#                                     style_header={
+#                                         'backgroundColor': 'rgb(50, 50, 50)',
+#                                         'fontWeight': 'bold',
+#                                         'color':'white'})
                             
 #------------------------------------------------------GRAPH------------------------------------------------------------------------------#
 

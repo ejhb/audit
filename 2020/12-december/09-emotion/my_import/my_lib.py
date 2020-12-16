@@ -15,8 +15,6 @@ from sklearn.linear_model import SGDClassifier, LogisticRegression, LogisticRegr
 from sklearn.naive_bayes import MultinomialNB, CategoricalNB, ComplementNB, BernoulliNB
 from sklearn.svm import SVC, LinearSVC
 #vis
-import matplotlib
-import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objs as go
 import plotly as py
