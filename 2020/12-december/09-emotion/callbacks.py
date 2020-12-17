@@ -26,6 +26,20 @@ def load_output(n):
         return 
     return 
 
+@app.callback(Output("output", "children"), [Input("input", "value")])
+def test(value):
+    text = [value]
+    if value is None:
+        return "Coco :"
+    else:
+        prediction = pipe0.predict(text)
+    return u"Emotion is : {}".format(prediction)
+
+
+
+
+
+
 # @app.callback(Output('tabs-example-content', 'children'),
 #               Input('tabs-example', 'value'))
 # def render_content(tab):
