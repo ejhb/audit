@@ -45,8 +45,10 @@ def run_pipes(pipes, splits=10, test_size=0.2, seed=42):
             y = pipe.predict(X_test)
             res[name].append([
                 fit_time,
-                f1_score(y_test, y, average = 'micro')
-            ])
+                f1_score(y_test, y, average = 'micro'),
+                precision_score(y_test, y, average = 'micro'),
+                recall_score(y_test, y, average = 'micro')
+])
     return res
 
 def print_table(res):
@@ -56,7 +58,9 @@ def print_table(res):
         arr = np.array(res[model])
         final[model] = {
             "time" : arr[:, 0].mean().round(2),
-            "f1_score": [arr[:,1].mean().round(5),arr[:,1].std().round(5)]
+            "f1_score": [arr[:,1].mean().round(5),arr[:,1].std().round(5)],
+            "Precision": arr[: 2].mean().round(5).round(5),
+            "Recall": arr[: 3].mean().round(5).round(5)
                     }
 
     df = pd.DataFrame.from_dict(final, orient="index").round(3)

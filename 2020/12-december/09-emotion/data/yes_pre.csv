@@ -1,0 +1,9 @@
+,Name,Time/ms,F1 Score | Ecart,Precision,Recall
+vect-sgd,vect-sgd,1.25,"[0.3218, 0.0022]",0.574,0.565
+vect-svm,vect-svm,273.38,"[0.34968, 0.00266]",67.362,67.627
+vect-tfidf-sgd,vect-tfidf-sgd,0.76,"[0.3184, 0.00366]",0.432,0.431
+vect-tfidf-svm,vect-tfidf-svm,174.39,"[0.33335, 0.01733]",44.189,29.69
+vect-tfidf-logit,vect-tfidf-logit,12.91,"[0.35065, 0.00427]",3.348,3.497
+vect-mult_nb,vect-mult_nb,0.42,"[0.3076, 0.00188]",0.332,0.333
+vect-compl_nb,vect-compl_nb,0.41,"[0.29007, 0.00385]",0.321,0.324
+vect-bern_nb,vect-bern_nb,0.4,"[0.29905, 0.00356]",0.32,0.324

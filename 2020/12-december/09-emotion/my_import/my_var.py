@@ -5,26 +5,44 @@
 from my_import.my_lib import *
 from my_import.my_func import get_top_n_words, tokenize , run_pipes , print_table
 #------------------------------------------------------DATAFRAME--------------------------------------------------------------------------#
-df0_brut = pd.read_csv('./data/emotion_final.csv')
-df0_pre = pd.read_csv('./data/emotion_final.csv')
+df0_brut = pd.read_csv('./data/kaggle_emotion.csv')
+df0_pre = pd.read_csv('./data/kaggle_emotion_pre.csv')
+df1_brut = pd.read_csv('./data/yes_emotion.csv')
+df1_pre = pd.read_csv('./data/yes_emotion_pre.csv')
+df0_pipe = pd.read_csv('./data/kaggle_pre.csv')
+df1_pipe = pd.read_csv('./data/yes_pre.csv')
 
-# # # exclude = set(string.punctuation) # exclude = punctuation strings
-# # # stop_word = stopwords.words('english') # we choosing stop words of english dict
-# # # stop_word_punct = stop_word.extend(exclude) # we add strings punctions to stop word dict
-# # # lemma = WordNetLemmatizer()
-# # # stemmer = SnowballStemmer("english") # we choosing the language english for the stemmization 
-# # # porter = PorterStemmer() 
-# # # lancaster=LancasterStemmer()
+# df0_pre.rename(columns={'Unnamed: 0': 'id_auto'}, inplace=True)
+# df0_pre.drop(columns=['id_auto'])
+# # df0_pre = pd.read_csv('./data/emotion_final.csv')
+# # exclude = set(string.punctuation) # exclude = punctuation strings
+# # stop_word = stopwords.words('english') # we choosing stop words of english dict
+# # stop_word_punct = stop_word.extend(exclude) # we add strings punctions to stop word dict
+# # lemma = WordNetLemmatizer()
+# # stemmer = SnowballStemmer("english") # we choosing the language english for the stemmization 
+# # porter = PorterStemmer() 
+# # lancaster=LancasterStemmer()
 
-# # # df0_pre['Text'] = df0_pre.apply(lambda row: word_tokenize(row['Text']), axis=1) # Tokenization
-# # # df0_pre['Text'] = df0_pre['Text'].apply(lambda x: [item for item in x if item not in stop_word]) # Stop wordization :) coucou anne-laure
-# # # df0_pre['Text'] = [[lemma.lemmatize(word) for word in each if word not in stop_word] for each in df0_pre['Text']]  # Lemmization
-# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [stemmer.stem(y) for y in x]) # Stem every word. with snowball('english')
-# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [porter.stem(y) for y in x]) # Stem every word. with porter
-# # # # df_pre['Text'] = df1['Text'].apply(lambda x: [lancaster.stem(y) for y in x]) # Stem every word. with lancaster
-# # # dz = df0_pre['Text']
-# # # dz = [[' '.join(i)][0] for i in dz] 
-# # # df0_pre['Text'] = dz
+# # df0_pre['Text'] = df0_pre.apply(lambda row: word_tokenize(row['Text']), axis=1) # Tokenization
+# # df0_pre['Text'] = df0_pre['Text'].apply(lambda x: [item for item in x if item not in stop_word]) # Stop wordization :) coucou anne-laure
+# # df0_pre['Text'] = [[lemma.lemmatize(word) for word in each if word not in stop_word] for each in df0_pre['Text']]  # Lemmization
+# # # df_pre['Text'] = df1['Text'].apply(lambda x: [stemmer.stem(y) for y in x]) # Stem every word. with snowball('english')
+# # # df_pre['Text'] = df1['Text'].apply(lambda x: [porter.stem(y) for y in x]) # Stem every word. with porter
+# # # df_pre['Text'] = df1['Text'].apply(lambda x: [lancaster.stem(y) for y in x]) # Stem every word. with lancaster
+# # dz = df0_pre['Text']
+# # dz = [[' '.join(i)][0] for i in dz] 
+# # df0_pre['Text'] = dz
+#-------------------------------------------------------INPUTPRED--------------------------------------------------------------------------#
+df0_brut = pd.read_csv('./data/kaggle_emotion.csv')
+targets = df0_brut['Emotion']
+corpus = df0_brut['Text']
+X_train, X_test, y_train, y_test = train_test_split(corpus, targets, random_state=0)
+
+pipe0 = Pipeline([
+    ('vect', CountVectorizer()),
+    ('sgd', SGDClassifier()),
+    ])
+pipe0.fit(X_train, y_train)
 
 
 #-------------------------------------------------------MARKDOWN--------------------------------------------------------------------------#
@@ -74,8 +92,7 @@ md_source = dcc.Markdown('''
                 * [Tutoriel TAL pour les débutants : Classification de texte](https://www.actuia.com/contribution/victorbigand/tutoriel-tal-pour-les-debutants-classification-de-texte/)
                 * [Text Classification with NLTK and Scikit-Learn](https://bbengfort.github.io/tutorials/2016/05/19/text-classification-nltk-sckit-learn.html)
                 * [Use Sentiment Analysis With Python to Classify Movie Reviews](https://medium.com/neuronio/from-sentiment-analysis-to-emotion-recognition-a-nlp-story-bcc9d6ff61ae)
-                * [From Sentiment Analysis to Emotion Recognition: A NLP story](https://realpython.com/sentiment-analysis-python/#how-classification-works)
-                ''')
+                * [From Sentiment Analysis to Emotion Recognition: A NLP story](https://realpython.com/sentiment-analysis-python/#how-classification-works)''')
 
 
 #------------------------------------------------------DASHTABLE--------------------------------------------------------------------------#
@@ -88,7 +105,7 @@ table0_brut = dash_table.DataTable(
                                     fixed_rows={'headers': True},
                                     # fixed_columns={'headers': True, 'data' :1},
                                     export_format='csv',
-                                    style_table={'opacity':'0.80',
+                                    style_table={'opacity':'0.85',
                                                 'maxHeight': '50ex',
                                                 'overflow': 'scrol',
                                                 'width': '100%',    
@@ -111,37 +128,161 @@ table0_brut = dash_table.DataTable(
                                         'fontWeight': 'bold',
                                         'color':'white'})
 
-# table0_pre = dash_table.DataTable(
-#                                     columns=[{'id': c, 'name': c} for c in df0_pre.columns],
-#                                     data= df0_pre.to_dict('records'),
-#                                     #Style table as list view
-#                                     #style_as_list_view=True,
-#                                     fixed_rows={'headers': True},
-#                                     # fixed_columns={'headers': True, 'data' :1},
-#                                     export_format='csv',
-#                                     style_table={'opacity':'0.80',
-#                                                 'maxHeight': '50ex',
-#                                                 'overflow': 'scrol',
-#                                                 'width': '100%',    
-#                                                 'minWidth': '100%',
-#                                                 'margin-left':'auto',
-#                                                 'margin-right':'auto'},
-#                                     #Cell dim + textpos
-#                                     style_cell_conditional=[{'height': 'auto',
-#                                         # all three widths are needed
-#                                         'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
-#                                         'whiteSpace': 'normal','textAlign':'center'}],
-#                                     #Line strip
-#                                     style_cell={'color': 'black'},
-#                                     # page_size = 15,
-#                                     style_data_conditional=[{
-#                                             'if': {'row_index': 'odd'},
-#                                             'backgroundColor': 'rgb(248, 248, 248)'}],
-#                                     style_header={
-#                                         'backgroundColor': 'rgb(50, 50, 50)',
-#                                         'fontWeight': 'bold',
-#                                         'color':'white'})
-                            
+table0_pre = dash_table.DataTable(
+                                    
+                                    columns=[{'id': c, 'name': c} for c in df0_pre[['Text','Emotion']]],
+                                    data= df0_pre.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.85',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scrol',
+                                                'width': '100%',    
+                                                'minWidth': '100%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        #all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})
+
+table1_brut = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df1_brut.columns],
+                                    data= df1_brut.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.85',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scroll',
+                                                'width': '100%',    
+                                                'minWidth': '1font-size: 40px;00%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        # all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})
+
+
+table1_pre = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df1_pre[['tweet_id','sentiment','author','content']]],
+                                    data= df1_pre.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.85',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scroll',
+                                                'width': '100%',    
+                                                'minWidth': '100%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        # all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})
+table0_pipe = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df0_pipe[['Name',"Time/ms","F1 Score | Ecart",'Precision','Recall']]],
+                                    data= df0_pipe.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.85',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scroll',
+                                                'width': '100%',    
+                                                'minWidth': '100%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        # all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})
+
+table1_pipe = dash_table.DataTable(
+                                    columns=[{'id': c, 'name': c} for c in df1_pipe[['Name',"Time/ms","F1 Score | Ecart",'Precision','Recall']]],
+                                    data= df1_pipe.to_dict('records'),
+                                    #Style table as list view
+                                    #style_as_list_view=True,
+                                    fixed_rows={'headers': True},
+                                    # fixed_columns={'headers': True, 'data' :1},
+                                    export_format='csv',
+                                    style_table={'opacity':'0.85',
+                                                'maxHeight': '50ex',
+                                                'overflow': 'scroll',
+                                                'width': '100%',    
+                                                'minWidth': '100%',
+                                                'margin-left':'auto',
+                                                'margin-right':'auto'},
+                                    #Cell dim + textpos
+                                    style_cell_conditional=[{'height': 'auto',
+                                        # all three widths are needed
+                                        'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                                        'whiteSpace': 'normal','textAlign':'center'}],
+                                    #Line strip
+                                    style_cell={'color': 'black'},
+                                    # page_size = 15,
+                                    style_data_conditional=[{
+                                            'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+                                    style_header={
+                                        'backgroundColor': 'rgb(50, 50, 50)',
+                                        'fontWeight': 'bold',
+                                        'color':'white'})                                       
 #------------------------------------------------------GRAPH------------------------------------------------------------------------------#
 
 #------------------------------------------------------FIGURE1----------------------------------------------------------------------------#
@@ -158,7 +299,7 @@ freq_p1 = go.Bar(
                 x = x_word.head(30),
                 y = y_nbr,
                 name = "Le score universitaire pour le transfert de connaissances par pays",
-                marker = dict(color = 'rgba(255, 87, 51, 0.5)', line = dict(color ='rgb(0,0,0)',width =2.5)),
+                marker = dict(color = 'rgba(25,211,243 0.5)', line = dict(color ='rgb(222,226,230)',width =2.5)),
                 text = df_up['Word'])
 
 freq_lay_p1 = go.Layout(barmode = "group",
@@ -169,7 +310,96 @@ freq_lay_p1 = go.Layout(barmode = "group",
                         family="sans serif",
                         size=14,
                         color="white"),
-                    paper_bgcolor='rgba(0,0,0,0.65)',
-                    plot_bgcolor='rgba(0,0,0,0.65)')
+                    paper_bgcolor='rgba(0,0,0,0.70)',
+                    plot_bgcolor='rgba(0,0,0,0.70)')
 freq_word_bar = go.Figure(data = freq_p1 , layout = freq_lay_p1)
 
+#------------------------------------------------------FIGURE2----------------------------------------------------------------------------#
+
+emotion_hist = go.Figure(px.histogram(df0_brut, x="Emotion", color= "Emotion").update_xaxes(categoryorder ="total descending"))
+emotion_hist.update_layout(
+                 title = 'Histogramme des émotions Kaggle data',
+                  yaxis = dict(title = "Nombre d'entrées"),
+                  xaxis = dict(title = 'Emotion'),
+                  font=dict(
+                        family="Courier",
+                        size=14,
+                        color="white"),
+                paper_bgcolor='rgba(0,0,0,0.70)',
+                plot_bgcolor='rgba(0,0,0,0.70)')
+
+
+
+#------------------------------------------------------FIGURE3----------------------------------------------------------------------------#
+# emotion2_hist = go.Figure(px.histogram(df1_brut, x="sentiment", color= "sentiment", title="Histogramme Emotion").update_xaxes(categoryorder ="total descending"))
+# emotion_hist.update_layout(
+#                 title = 'Histogramme des émotions Yes data',
+#                             yaxis = dict(title = "Nombre d'entrées"),
+#                             xaxis = dict(title = 'Emotion'),
+#                             font=dict(
+#                                     family="Courier",
+#                                     size=14,
+#                                     color="white"),
+#                             paper_bgcolor='rgba(0,0,0,0.70)',
+#                             plot_bgcolor='rgba(0,0,0,0.70)')
+
+
+
+#------------------------------------------------------NAVBAR----------------------------------------------------------------------------#
+# nav_bar = dbc.NavbarSimple(style={'opacity': 1,'font-size': '20px'},
+#     children=[
+#         dbc.NavItem(dbc.NavLink("Page 1", href='/apps/page1', style={'color':'blue'})),
+#         dbc.NavItem(dbc.NavLink("Page 2", href='/apps/page2', style={'color':'blue'})),
+#     ],
+#     brand="Homepage",
+#     brand_href='/',
+#     fixed = "top",
+#     fluid = True
+# )
+
+# search_bar = dbc.Row(
+#     [
+#         dbc.Col(dbc.Input(type="search", placeholder="Search")),
+#         dbc.Col(
+#             dbc.Button("Search", color="primary", className="ml-2"),
+#             width="auto",
+#         ),
+#     ],
+#     no_gutters=True,
+#     className="ml-auto flex-nowrap mt-3 mt-md-0",
+#     align="center",
+# )
+p1_buton = dbc.NavItem(dbc.NavLink("Page 1", href='/apps/page1', active=True, style={'margin-right':'5px'}, className="bootstrap_s_buton"))
+p2_buton = dbc.NavItem(dbc.NavLink("Page 2", href='/apps/page2', active=True, className="bootstrap_s_buton"))
+
+nav_bar = dbc.Navbar(
+    [
+        html.A(
+            # Use row and col to control vertical alignment of logo / brand
+            dbc.Row(
+                [
+                    dbc.Col(html.Img(src="/assets/favicon.ico",height = "40px" ,style={'margin-left':'50px'})),
+                    dbc.Col(dbc.NavbarBrand("HomePage", className="bootstrap_buton")),
+                ],
+                align="center",
+                no_gutters=True,
+            ),
+            href="/",
+        ),
+        dbc.NavbarToggler(id="navbar-toggler"),
+        dbc.Collapse(
+            dbc.Nav(style={'margin-left':'auto'},
+                    children=[
+                p1_buton,
+                p2_buton
+                ]
+                ,pills=True), 
+            id="navbar-collapse", 
+            navbar=True),
+    ],
+    color ='black',
+    style = {'opacity':0.90},
+    fixed = "top",
+    dark = True
+
+)
