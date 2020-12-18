@@ -33,7 +33,6 @@ df1_pipe = pd.read_csv('./data/yes_pre.csv')
 # # dz = [[' '.join(i)][0] for i in dz] 
 # # df0_pre['Text'] = dz
 #-------------------------------------------------------INPUTPRED--------------------------------------------------------------------------#
-df0_brut = pd.read_csv('./data/kaggle_emotion.csv')
 targets = df0_brut['Emotion']
 corpus = df0_brut['Text']
 X_train, X_test, y_train, y_test = train_test_split(corpus, targets, random_state=0)
@@ -346,29 +345,6 @@ emotion_hist.update_layout(
 
 
 #------------------------------------------------------NAVBAR----------------------------------------------------------------------------#
-# nav_bar = dbc.NavbarSimple(style={'opacity': 1,'font-size': '20px'},
-#     children=[
-#         dbc.NavItem(dbc.NavLink("Page 1", href='/apps/page1', style={'color':'blue'})),
-#         dbc.NavItem(dbc.NavLink("Page 2", href='/apps/page2', style={'color':'blue'})),
-#     ],
-#     brand="Homepage",
-#     brand_href='/',
-#     fixed = "top",
-#     fluid = True
-# )
-
-# search_bar = dbc.Row(
-#     [
-#         dbc.Col(dbc.Input(type="search", placeholder="Search")),
-#         dbc.Col(
-#             dbc.Button("Search", color="primary", className="ml-2"),
-#             width="auto",
-#         ),
-#     ],
-#     no_gutters=True,
-#     className="ml-auto flex-nowrap mt-3 mt-md-0",
-#     align="center",
-# )
 p1_buton = dbc.NavItem(dbc.NavLink("Page 1", href='/apps/page1', active=True, style={'margin-right':'5px'}, className="bootstrap_s_buton"))
 p2_buton = dbc.NavItem(dbc.NavLink("Page 2", href='/apps/page2', active=True, className="bootstrap_s_buton"))
 
